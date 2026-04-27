@@ -1,7 +1,7 @@
 import { ArrowRight, Download, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroCubes from "@/assets/hero-cubes.jpg";
-import profile from "@/assets/aya-profile.jpg";
+import profile from "@/assets/aya-profile.png";
 
 export const Hero = () => {
   return (
@@ -33,7 +33,7 @@ export const Hero = () => {
           <h1 className="mt-6 font-display text-5xl font-semibold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
             Aya Shaaban
             <br />
-            <span className="glow-text">Khaleil</span>
+            <span className="glow-text">Gameel</span>
           </h1>
 
           <p className="mt-5 max-w-xl text-lg text-muted-foreground md:text-xl">
@@ -86,8 +86,8 @@ export const Hero = () => {
             <div className="absolute inset-6 overflow-hidden rounded-full border border-border/70">
               <img
                 src={profile}
-                alt="Portrait of Aya Shaaban Khaleil, Data Analyst"
-                className="h-full w-full object-cover"
+                alt="Portrait of Aya Shaaban Gameel, Data Analyst"
+                className="h-full w-full object-cover object-[50%_20%]"
                 width={768}
                 height={768}
               />

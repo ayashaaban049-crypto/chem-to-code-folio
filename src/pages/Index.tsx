@@ -12,8 +12,8 @@ import { Footer } from "@/components/portfolio/Footer";
 
 const Index = () => {
   useEffect(() => {
-    document.title = "Aya Shaaban Khaleil — Data Analytics Specialist";
-    const desc = "Portfolio of Aya Shaaban Khaleil, Junior Data Analyst with a chemistry background, specializing in data analytics, dashboards and applied AI in healthcare.";
+    document.title = "Aya Shaaban Gameel — Data Analytics Specialist";
+    const desc = "Portfolio of Aya Shaaban Gameel, Junior Data Analyst with a chemistry background, specializing in data analytics, dashboards and applied AI in healthcare.";
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement("meta");
