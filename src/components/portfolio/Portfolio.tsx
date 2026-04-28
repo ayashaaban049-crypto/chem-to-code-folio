@@ -3,8 +3,16 @@ import { SectionHeading } from "./SectionHeading";
 import gtx from "@/assets/project-gtx.jpg";
 import intl from "@/assets/project-intl.jpg";
 import chem from "@/assets/project-chemist.jpg";
+import bankEda from "@/assets/project-bank-eda.jpg";
 
 const projects = [
+  {
+    img: bankEda,
+    title: "Bank Management System — EDA Report",
+    desc: "Full Exploratory Data Analysis on a 38,838-row banking dataset (31 columns): data quality checks, missing value handling, univariate & multivariate analysis, correlation heatmaps, multicollinearity fixes, and a Ridge baseline + Logistic Regression PoC for loan prediction.",
+    tools: ["Python", "Pandas", "Matplotlib", "Scikit-learn"],
+    tag: "EDA Project",
+  },
   {
     img: gtx,
     title: "GTX Sales Dashboard",
