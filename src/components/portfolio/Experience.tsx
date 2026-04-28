@@ -2,6 +2,7 @@ import { Briefcase } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 import digiliansLogo from "@/assets/digilians-logo.jpg";
 import naliLogo from "@/assets/nali-logo.jpg";
+import ultralabLogo from "@/assets/ultralab-logo.png";
 
 const items = [
   {
@@ -26,6 +27,7 @@ const items = [
     role: "Chemist",
     org: "Ultra Lab",
     period: "—",
+    logo: ultralabLogo,
     points: ["Laboratory testing and analysis with strict protocol adherence."],
   },
 ];
