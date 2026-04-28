@@ -1,6 +1,7 @@
 import { Briefcase } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 import digiliansLogo from "@/assets/digilians-logo.jpg";
+import naliLogo from "@/assets/nali-logo.jpg";
 
 const items = [
   {
@@ -18,6 +19,7 @@ const items = [
     role: "Medical Representative",
     org: "Nali Pharma International",
     period: "2017 — 2019",
+    logo: naliLogo,
     points: ["Sales and client relationship management across pharmaceutical accounts."],
   },
   {
