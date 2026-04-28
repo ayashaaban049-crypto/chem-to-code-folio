@@ -1,11 +1,13 @@
 import { Briefcase } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
+import digiliansLogo from "@/assets/digilians-logo.jpg";
 
 const items = [
   {
     role: "Junior Data Analyst",
     org: "Digital Pioneers Initiative — MCIT & Military Technical College",
     period: "2025 — Present",
+    logo: digiliansLogo,
     points: [
       "Data analysis using Python, SQL, Excel and Power BI",
       "Machine learning fundamentals and insight extraction",
@@ -46,11 +48,23 @@ export const Experience = () => {
                   <Briefcase size={14} className="text-primary" />
                 </span>
                 <div className="glass-card p-6">
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <h3 className="font-display text-lg font-semibold">{it.role}</h3>
+                  <div className="flex flex-wrap items-start justify-between gap-3">
+                    <div className="flex items-start gap-3">
+                      {it.logo && (
+                        <img
+                          src={it.logo}
+                          alt={`${it.org} logo`}
+                          className="h-12 w-12 shrink-0 rounded-lg border border-border bg-white object-contain p-1"
+                          loading="lazy"
+                        />
+                      )}
+                      <div>
+                        <h3 className="font-display text-lg font-semibold">{it.role}</h3>
+                        <p className="mt-1 text-sm text-muted-foreground">{it.org}</p>
+                      </div>
+                    </div>
                     <span className="chip border-primary/30 text-primary">{it.period}</span>
                   </div>
-                  <p className="mt-1 text-sm text-muted-foreground">{it.org}</p>
                   <ul className="mt-4 space-y-1.5">
                     {it.points.map((pt) => (
                       <li key={pt} className="flex items-start gap-2 text-sm text-muted-foreground">
