@@ -8,10 +8,10 @@ import bankEda from "@/assets/project-bank-eda.jpg";
 const projects = [
   {
     img: bankEda,
-    title: "Bank Management System — EDA Report",
-    desc: "Full Exploratory Data Analysis on a 38,838-row banking dataset (31 columns): data quality checks, missing value handling, univariate & multivariate analysis, correlation heatmaps, multicollinearity fixes, and a Ridge baseline + Logistic Regression PoC for loan prediction.",
-    tools: ["Python", "Pandas", "Matplotlib", "Scikit-learn"],
-    tag: "EDA Project",
+    title: "Bank Management System",
+    desc: "An end-to-end data analysis project on a banking dataset of ~38K customers across 31 features. The work covers data cleaning and quality checks, handling missing values and outliers, then deep univariate and multivariate exploration of customer demographics, account balances, and loan behavior. Insights are surfaced through correlation heatmaps and clear visual storytelling, and the project closes with a predictive modeling layer (Logistic Regression with a Ridge baseline) to estimate loan approval likelihood — turning raw bank data into actionable business insight.",
+    tools: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Scikit-learn"],
+    tag: "Data Analysis",
   },
   {
     img: gtx,
