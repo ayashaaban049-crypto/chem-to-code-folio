@@ -1,6 +1,7 @@
 import { Briefcase } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 import digiliansLogo from "@/assets/digilians-logo.jpg";
+import naliLogo from "@/assets/nali-logo.jpg";
 
 const items = [
   {
