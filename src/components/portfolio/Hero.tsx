@@ -61,7 +61,7 @@ export const Hero = () => {
         </h1>
 
         <p className="mt-5 max-w-2xl text-lg text-muted-foreground md:text-xl animate-fade-up">
-          Data Analytics Specialist · Applied AI &amp; Data Science Enthusiast
+          Data Analytics Specialist · Applied AI &amp; Data Analytics Enthusiast
         </p>
 
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3 animate-fade-up">
