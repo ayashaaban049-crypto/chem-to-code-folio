@@ -1,4 +1,4 @@
-import { LineChart, LayoutDashboard, PieChart, Cpu, Stethoscope } from "lucide-react";
+import { LineChart, LayoutDashboard, PieChart, Cpu, Stethoscope, Brain, Bot } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 
 const services = [
@@ -19,8 +19,18 @@ const services = [
   },
   {
     icon: Cpu,
-    title: "Machine Learning (Basics)",
-    desc: "Building, tuning, and evaluating simple predictive models with Python.",
+    title: "Machine Learning",
+    desc: "Building, tuning, and evaluating predictive models with Python and scikit-learn.",
+  },
+  {
+    icon: Brain,
+    title: "Deep Learning",
+    desc: "Designing neural networks for advanced pattern recognition and prediction tasks.",
+  },
+  {
+    icon: Bot,
+    title: "Agentic AI",
+    desc: "Crafting autonomous AI agents that reason, plan, and act on real-world workflows.",
   },
   {
     icon: Stethoscope,
