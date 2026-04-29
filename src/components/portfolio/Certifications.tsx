@@ -75,6 +75,11 @@ const certs: Cert[] = [
     issuer: "ITI · Mahara-Tech (AI Academy)",
     date: "Apr 2026",
   },
+  {
+    title: "Fundamentals of Digital Transformation",
+    issuer: "TCEU · Zagazig University (5 Mandatory + 2 Electives: Networks, Mobile App)",
+    date: "Sep 2022",
+  },
 ];
 
 export const Certifications = () => {
