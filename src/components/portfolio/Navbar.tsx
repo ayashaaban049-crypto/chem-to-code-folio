@@ -28,10 +28,13 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <header
+    <motion.header
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        scrolled ? "py-3" : "py-5",
+        scrolled ? "py-2" : "py-5",
       )}
     >
       <div
@@ -54,7 +57,7 @@ export const Navbar = () => {
             <a
               key={l.href}
               href={l.href}
-              className="rounded-full px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-surface-elevated hover:text-foreground"
+              className="nav-underline rounded-full px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {l.label}
             </a>
