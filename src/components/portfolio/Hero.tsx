@@ -122,7 +122,7 @@ export const Hero = () => {
           className="mt-9 flex flex-wrap items-center justify-center gap-3"
         >
           <MagneticButton>
-            <Button asChild variant="hero" size="lg" className="group cta-pulse-once">
+            <Button asChild variant="hero" size="lg" className="group cta-pulse-once ripple">
               <a href="#portfolio">
                 View My Work
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
