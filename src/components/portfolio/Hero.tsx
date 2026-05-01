@@ -2,10 +2,42 @@ import { ArrowRight, Download, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { MagneticButton } from "./MagneticButton";
+import { useCountUp } from "@/hooks/useCountUp";
 import heroCubes from "@/assets/hero-cubes.jpg";
 import profile from "@/assets/aya-profile.png";
 
 const headingWords = ["Aya", "Shaaban", "Gameel"];
+
+const CountStat = ({
+  n,
+  suffix,
+  text,
+  label,
+  delay,
+}: {
+  n?: number | null;
+  suffix?: string;
+  text?: string;
+  label: string;
+  delay: number;
+}) => {
+  const { value, ref } = useCountUp(n ?? 0, 1200);
+  return (
+    <motion.div
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, delay, ease: "easeOut" }}
+    >
+      <div
+        ref={ref}
+        className="font-display text-2xl font-semibold text-foreground md:text-3xl"
+      >
+        {n != null ? `${value}${suffix ?? ""}` : text}
+      </div>
+      <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>
+    </motion.div>
+  );
+};
 
 export const Hero = () => {
   return (
@@ -111,14 +143,11 @@ export const Hero = () => {
 
         <div className="mt-14 grid w-full max-w-md grid-cols-3 gap-6">
           {[
-            { k: "5+", v: "Dashboards" },
-            { k: "4", v: "Years science" },
-            { k: "AI", v: "+ Healthcare" },
-          ].map((s) => (
-            <div key={s.v}>
-              <div className="font-display text-2xl font-semibold text-foreground md:text-3xl">{s.k}</div>
-              <div className="text-xs uppercase tracking-wider text-muted-foreground">{s.v}</div>
-            </div>
+            { n: 5, suffix: "+", label: "Dashboards" },
+            { n: 4, suffix: "", label: "Years science" },
+            { n: null, text: "AI", label: "+ Healthcare" },
+          ].map((s, i) => (
+            <CountStat key={s.label} {...s} delay={1.1 + i * 0.12} />
           ))}
         </div>
       </div>
