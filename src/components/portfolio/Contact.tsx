@@ -1,12 +1,14 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { z } from "zod";
-import { Mail, Phone, MapPin, Linkedin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { SectionHeading } from "./SectionHeading";
+import { MagneticButton } from "./MagneticButton";
 
 const schema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
@@ -88,9 +90,23 @@ export const Contact = () => {
           </div>
 
           {/* Form */}
-          <form onSubmit={onSubmit} className="glass-card p-8 space-y-5">
+          <motion.form
+            onSubmit={onSubmit}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              hidden: {},
+              show: { transition: { staggerChildren: 0.1 } },
+            }}
+            className="glass-card p-8 space-y-5"
+          >
             <div className="grid gap-5 md:grid-cols-2">
-              <div className="space-y-2">
+              <motion.div
+                variants={{ hidden: { y: 30, opacity: 0 }, show: { y: 0, opacity: 1 } }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="field-anim space-y-2"
+              >
                 <Label htmlFor="name">Name</Label>
                 <Input
                   id="name"
@@ -100,8 +116,12 @@ export const Contact = () => {
                   placeholder="Your name"
                   className="h-11 bg-surface/50"
                 />
-              </div>
-              <div className="space-y-2">
+              </motion.div>
+              <motion.div
+                variants={{ hidden: { y: 30, opacity: 0 }, show: { y: 0, opacity: 1 } }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="field-anim space-y-2"
+              >
                 <Label htmlFor="email">Email</Label>
                 <Input
                   id="email"
@@ -112,9 +132,13 @@ export const Contact = () => {
                   placeholder="you@example.com"
                   className="h-11 bg-surface/50"
                 />
-              </div>
+              </motion.div>
             </div>
-            <div className="space-y-2">
+            <motion.div
+              variants={{ hidden: { y: 30, opacity: 0 }, show: { y: 0, opacity: 1 } }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="field-anim space-y-2"
+            >
               <Label htmlFor="message">Message</Label>
               <Textarea
                 id="message"
@@ -125,11 +149,24 @@ export const Contact = () => {
                 placeholder="Tell me about your project or question…"
                 className="bg-surface/50"
               />
-            </div>
-            <Button type="submit" variant="hero" size="lg" disabled={loading} className="w-full sm:w-auto">
-              {loading ? "Sending…" : (<>Send message <Send size={16} /></>)}
-            </Button>
-          </form>
+            </motion.div>
+            <motion.div
+              variants={{ hidden: { y: 30, opacity: 0 }, show: { y: 0, opacity: 1 } }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+              <MagneticButton>
+                <Button type="submit" variant="hero" size="lg" disabled={loading} className="ripple w-full sm:w-auto">
+                  {loading ? (
+                    <>
+                      <Loader2 size={16} className="animate-spin" /> Sending…
+                    </>
+                  ) : (
+                    <>Send message <Send size={16} /></>
+                  )}
+                </Button>
+              </MagneticButton>
+            </motion.div>
+          </motion.form>
         </div>
       </div>
     </section>

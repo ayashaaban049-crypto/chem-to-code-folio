@@ -10,6 +10,7 @@ import { Education } from "@/components/portfolio/Education";
 import { Certifications } from "@/components/portfolio/Certifications";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
+import { CursorGlow } from "@/components/portfolio/CursorGlow";
 
 const Index = () => {
   useEffect(() => {
@@ -34,6 +35,7 @@ const Index = () => {
 
   return (
     <main className="relative min-h-screen overflow-x-hidden">
+      <CursorGlow />
       <Navbar />
       <Hero />
       <About />

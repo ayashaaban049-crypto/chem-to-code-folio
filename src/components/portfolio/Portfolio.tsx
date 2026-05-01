@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { SectionHeading } from "./SectionHeading";
 import gtx from "@/assets/project-gtx.jpg";
 import intl from "@/assets/project-intl.jpg";
@@ -47,14 +48,21 @@ export const Portfolio = () => {
         />
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p) => (
-            <article key={p.title} className="glass-card group flex flex-col overflow-hidden">
+          {projects.map((p, i) => (
+            <motion.article
+              key={p.title}
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.6, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+              className="glass-card tilt-card group flex flex-col overflow-hidden"
+            >
               <div className="relative aspect-[16/10] overflow-hidden">
                 <img
                   src={p.img}
                   alt={p.title}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   width={1024}
                   height={640}
                 />
@@ -62,6 +70,9 @@ export const Portfolio = () => {
                 <span className="absolute left-4 top-4 chip border-primary/40 text-primary">
                   {p.tag}
                 </span>
+                <div className="card-overlay">
+                  <p className="text-xs text-foreground/90">Click to explore the {p.tag.toLowerCase()} →</p>
+                </div>
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <div className="flex items-start justify-between gap-3">
@@ -78,7 +89,7 @@ export const Portfolio = () => {
                   ))}
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>

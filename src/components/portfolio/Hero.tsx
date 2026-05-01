@@ -1,7 +1,43 @@
 import { ArrowRight, Download, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { MagneticButton } from "./MagneticButton";
+import { useCountUp } from "@/hooks/useCountUp";
 import heroCubes from "@/assets/hero-cubes.jpg";
 import profile from "@/assets/aya-profile.png";
+
+const headingWords = ["Aya", "Shaaban", "Gameel"];
+
+const CountStat = ({
+  n,
+  suffix,
+  text,
+  label,
+  delay,
+}: {
+  n?: number | null;
+  suffix?: string;
+  text?: string;
+  label: string;
+  delay: number;
+}) => {
+  const { value, ref } = useCountUp(n ?? 0, 1200);
+  return (
+    <motion.div
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, delay, ease: "easeOut" }}
+    >
+      <div
+        ref={ref}
+        className="font-display text-2xl font-semibold text-foreground md:text-3xl"
+      >
+        {n != null ? `${value}${suffix ?? ""}` : text}
+      </div>
+      <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>
+    </motion.div>
+  );
+};
 
 export const Hero = () => {
   return (
@@ -56,41 +92,62 @@ export const Hero = () => {
         </div>
 
         {/* Name & title below */}
-        <h1 className="mt-12 font-display text-5xl font-semibold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl animate-fade-up">
-          Aya Shaaban <span className="glow-text">Gameel</span>
+        <h1 className="mt-12 font-display text-5xl font-semibold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
+          {headingWords.map((w, i) => (
+            <motion.span
+              key={w}
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.55, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              className={i === headingWords.length - 1 ? "inline-block glow-text mr-3" : "inline-block mr-3"}
+            >
+              {w}
+            </motion.span>
+          ))}
         </h1>
 
-        <p className="mt-5 max-w-2xl text-lg text-muted-foreground md:text-xl animate-fade-up">
+        <motion.p
+          initial={{ y: 16, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+          className="mt-5 max-w-2xl text-lg text-muted-foreground md:text-xl"
+        >
           Data Analytics Specialist · Applied AI &amp; Data Analytics Enthusiast
-        </p>
+        </motion.p>
 
-        <div className="mt-9 flex flex-wrap items-center justify-center gap-3 animate-fade-up">
-          <Button asChild variant="hero" size="lg" className="group">
-            <a href="#portfolio">
-              View My Work
-              <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-            </a>
-          </Button>
-          <Button asChild variant="glass" size="lg">
-            <a href="#contact">Contact Me</a>
-          </Button>
-          <Button asChild variant="ghost" size="lg" className="text-muted-foreground hover:text-foreground">
+        <motion.div
+          initial={{ y: 16, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.95, ease: "easeOut" }}
+          className="mt-9 flex flex-wrap items-center justify-center gap-3"
+        >
+          <MagneticButton>
+            <Button asChild variant="hero" size="lg" className="group cta-pulse-once ripple">
+              <a href="#portfolio">
+                View My Work
+                <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+              </a>
+            </Button>
+          </MagneticButton>
+          <MagneticButton>
+            <Button asChild variant="glass" size="lg" className="border-draw">
+              <a href="#contact">Contact Me</a>
+            </Button>
+          </MagneticButton>
+          <Button asChild variant="ghost" size="lg" className="text-muted-foreground hover:text-foreground border-draw">
             <a href="#about">
               <Download size={16} /> Download CV
             </a>
           </Button>
-        </div>
+        </motion.div>
 
         <div className="mt-14 grid w-full max-w-md grid-cols-3 gap-6">
           {[
-            { k: "5+", v: "Dashboards" },
-            { k: "4", v: "Years science" },
-            { k: "AI", v: "+ Healthcare" },
-          ].map((s) => (
-            <div key={s.v}>
-              <div className="font-display text-2xl font-semibold text-foreground md:text-3xl">{s.k}</div>
-              <div className="text-xs uppercase tracking-wider text-muted-foreground">{s.v}</div>
-            </div>
+            { n: 5, suffix: "+", label: "Dashboards" },
+            { n: 4, suffix: "", label: "Years science" },
+            { n: null, text: "AI", label: "+ Healthcare" },
+          ].map((s, i) => (
+            <CountStat key={s.label} {...s} delay={1.1 + i * 0.12} />
           ))}
         </div>
       </div>
