@@ -1,12 +1,14 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { z } from "zod";
-import { Mail, Phone, MapPin, Linkedin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { SectionHeading } from "./SectionHeading";
+import { MagneticButton } from "./MagneticButton";
 
 const schema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
