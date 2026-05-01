@@ -69,11 +69,24 @@ export const Portfolio = () => {
               className="glass-card tilt-card group flex flex-col overflow-hidden"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
+                {p.bgImg && (
+                  <img
+                    src={p.bgImg}
+                    alt=""
+                    aria-hidden
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover opacity-40 mix-blend-luminosity transition-all duration-700 group-hover:opacity-80 group-hover:mix-blend-normal group-hover:scale-110"
+                    width={1024}
+                    height={640}
+                  />
+                )}
                 <img
                   src={p.img}
                   alt={p.title}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className={`relative h-full w-full object-cover transition-all duration-700 group-hover:scale-110 ${
+                    p.bgImg ? "group-hover:opacity-0" : ""
+                  }`}
                   width={1024}
                   height={640}
                 />
@@ -82,7 +95,7 @@ export const Portfolio = () => {
                   {p.tag}
                 </span>
                 <div className="card-overlay">
-                  <p className="text-xs text-foreground/90">Click to explore the {p.tag.toLowerCase()} →</p>
+                  <p className="text-xs text-foreground/90">{p.bgImg ? "Hover to reveal the ERD schema →" : `Click to explore the ${p.tag.toLowerCase()} →`}</p>
                 </div>
               </div>
               <div className="flex flex-1 flex-col p-6">
