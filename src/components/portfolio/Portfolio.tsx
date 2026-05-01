@@ -4,15 +4,26 @@ import { SectionHeading } from "./SectionHeading";
 import gtx from "@/assets/project-gtx.jpg";
 import intl from "@/assets/project-intl.jpg";
 import chem from "@/assets/project-chemist.jpg";
-import bankEda from "@/assets/project-bank-eda.jpg";
+import digiliansDashboard from "@/assets/project-digilians-dashboard.png";
+import digiliansErd from "@/assets/project-digilians-erd.png";
 
-const projects = [
+type Project = {
+  img: string;
+  bgImg?: string;
+  title: string;
+  desc: string;
+  tools: string[];
+  tag: string;
+};
+
+const projects: Project[] = [
   {
-    img: bankEda,
-    title: "Bank Management System",
-    desc: "An end-to-end data analysis project on a banking dataset of ~38K customers across 31 features. The work covers data cleaning and quality checks, handling missing values and outliers, then deep univariate and multivariate exploration of customer demographics, account balances, and loan behavior. Insights are surfaced through correlation heatmaps and clear visual storytelling, and the project closes with a predictive modeling layer (Logistic Regression with a Ridge baseline) to estimate loan approval likelihood — turning raw bank data into actionable business insight.",
-    tools: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Scikit-learn"],
-    tag: "Data Analysis",
+    img: digiliansDashboard,
+    bgImg: digiliansErd,
+    title: "Digilians Bank: End-to-End Banking Database Architecture & BI Dashboard",
+    desc: "A comprehensive banking data project bridging backend data structures and executive decision-making. Designed a robust ERD covering customers, multi-type accounts, loans, merchant transactions, branches and employees, then built a professional BI dashboard tracking critical KPIs across a 39K-record dataset — average balance $100.54K, total loans $2.62bn, average credit score 575. Includes risk segmentation by credit category and loan status, account/card-type distribution, geographic breakdowns, and balance trends from 2019–2026 — turning relational banking data into clear, data-driven insight.",
+    tools: ["SQL Server", "Power BI", "Excel", "ER Diagramming", "Data Modeling"],
+    tag: "BI & Database",
   },
   {
     img: gtx,
@@ -58,11 +69,24 @@ export const Portfolio = () => {
               className="glass-card tilt-card group flex flex-col overflow-hidden"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
+                {p.bgImg && (
+                  <img
+                    src={p.bgImg}
+                    alt=""
+                    aria-hidden
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover opacity-40 mix-blend-luminosity transition-all duration-700 group-hover:opacity-80 group-hover:mix-blend-normal group-hover:scale-110"
+                    width={1024}
+                    height={640}
+                  />
+                )}
                 <img
                   src={p.img}
                   alt={p.title}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className={`relative h-full w-full object-cover transition-all duration-700 group-hover:scale-110 ${
+                    p.bgImg ? "group-hover:opacity-0" : ""
+                  }`}
                   width={1024}
                   height={640}
                 />
@@ -71,7 +95,7 @@ export const Portfolio = () => {
                   {p.tag}
                 </span>
                 <div className="card-overlay">
-                  <p className="text-xs text-foreground/90">Click to explore the {p.tag.toLowerCase()} →</p>
+                  <p className="text-xs text-foreground/90">{p.bgImg ? "Hover to reveal the ERD schema →" : `Click to explore the ${p.tag.toLowerCase()} →`}</p>
                 </div>
               </div>
               <div className="flex flex-1 flex-col p-6">
