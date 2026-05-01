@@ -1,4 +1,5 @@
 import { BarChart3, Microscope, Users, Languages } from "lucide-react";
+import { motion } from "framer-motion";
 import { SectionHeading } from "./SectionHeading";
 
 const groups = [
@@ -57,10 +58,17 @@ export const Skills = () => {
         />
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {groups.map((g) => {
+          {groups.map((g, gi) => {
             const Icon = g.icon;
             return (
-              <div key={g.title} className="glass-card p-6">
+              <motion.div
+                key={g.title}
+                initial={{ y: 30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: gi * 0.1, ease: "easeOut" }}
+                className="glass-card p-6"
+              >
                 <div className="mb-5 flex items-center gap-3">
                   <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-primary text-primary-foreground shadow-glow-sm">
                     <Icon size={18} />
@@ -68,14 +76,26 @@ export const Skills = () => {
                   <h3 className="font-display text-lg font-semibold">{g.title}</h3>
                 </div>
                 <ul className="space-y-2">
-                  {g.items.map((it) => (
-                    <li key={it} className="flex items-start gap-2 text-sm text-muted-foreground">
+                  {g.items.map((it, i) => (
+                    <motion.li
+                      key={it}
+                      initial={{ scale: 0.6, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      viewport={{ once: true, amount: 0.2 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 18,
+                        delay: gi * 0.1 + i * 0.07,
+                      }}
+                      className="flex items-start gap-2 text-sm text-muted-foreground"
+                    >
                       <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary" />
                       {it}
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             );
           })}
         </div>
