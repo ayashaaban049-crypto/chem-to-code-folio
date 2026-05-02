@@ -2,6 +2,7 @@ import { ArrowRight, Download, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { MagneticButton } from "./MagneticButton";
+import { Typewriter } from "./Typewriter";
 import { useCountUp } from "@/hooks/useCountUp";
 import heroCubes from "@/assets/hero-cubes.jpg";
 import profile from "@/assets/aya-profile.png";
@@ -110,9 +111,17 @@ export const Hero = () => {
           initial={{ y: 16, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
-          className="mt-5 max-w-2xl text-lg text-muted-foreground md:text-xl"
+          className="mt-5 max-w-2xl text-lg text-muted-foreground md:text-xl min-h-[1.75rem]"
         >
-          Data Analytics Specialist · Applied AI &amp; Data Analytics Enthusiast
+          <Typewriter
+            text="Data Analytics Specialist · Applied AI & Data Analytics Enthusiast"
+            loop
+            startDelay={900}
+            speed={55}
+            eraseSpeed={28}
+            pauseEnd={2200}
+            pauseStart={500}
+          />
         </motion.p>
 
         <motion.div
