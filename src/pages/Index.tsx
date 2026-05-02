@@ -11,8 +11,10 @@ import { Certifications } from "@/components/portfolio/Certifications";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 import { CursorGlow } from "@/components/portfolio/CursorGlow";
+import { usePageFlipNav } from "@/hooks/usePageFlipNav";
 
 const Index = () => {
+  usePageFlipNav();
   useEffect(() => {
     document.title = "Aya Shaaban Gameel — Data Analytics Specialist";
     const desc = "Portfolio of Aya Shaaban Gameel, Junior Data Analyst with a chemistry background, specializing in data analytics, dashboards and applied AI in healthcare.";
@@ -37,15 +39,17 @@ const Index = () => {
     <main className="relative min-h-screen overflow-x-hidden">
       <CursorGlow />
       <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Services />
-      <Portfolio />
-      <Experience />
+      <div id="page-flip-root">
+        <Hero />
+        <About />
+        <Skills />
+        <Services />
+        <Portfolio />
+        <Experience />
         <Education />
         <Certifications />
         <Contact />
+      </div>
       <Footer />
     </main>
   );
