@@ -36,19 +36,19 @@ export const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="mx-auto mb-10 max-w-3xl space-y-5 text-center text-base leading-relaxed text-muted-foreground md:text-lg"
+          className="mx-auto mb-12 max-w-3xl space-y-5 text-center text-base leading-relaxed text-muted-foreground md:text-lg"
         >
           <p>
-            Aya is a Junior Data Analyst with a strong scientific background in Chemistry and ongoing
-            training in Data Analytics and Artificial Intelligence. She combines her expertise as a
-            chemist with data analysis skills to extract meaningful insights and support data-driven
-            decision-making.
+            Hi, I'm Aya! I am a Junior Data Analyst with a strong scientific background in Chemistry
+            and ongoing training in Data Analytics and Artificial Intelligence. I combine my expertise
+            as a chemist with data analysis skills to extract meaningful insights and support
+            data-driven decision-making.
           </p>
           <p>
-            She is skilled in data analysis, statistical modeling, Python, and machine learning
+            I am skilled in data analysis, statistical modeling, Python, and machine learning
             fundamentals, with the ability to work with complex datasets and translate them into
-            actionable insights. With a Bachelor's degree in Science (Chemistry), she applies
-            analytical thinking, experimentation, and problem-solving to real-world data challenges.
+            actionable insights. With a Bachelor's degree in Science (Chemistry), I apply analytical
+            thinking, experimentation, and problem-solving to real-world data challenges.
           </p>
         </motion.div>
 
