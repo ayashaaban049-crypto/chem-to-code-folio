@@ -119,11 +119,31 @@ export const Portfolio = () => {
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <div className="flex items-start justify-between gap-3">
-                  <h3 className="font-display text-xl font-semibold">{p.title}</h3>
-                  <ArrowUpRight
-                    size={20}
-                    className="shrink-0 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary"
-                  />
+                  {p.link ? (
+                    <a
+                      href={p.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-display text-xl font-semibold transition-colors hover:text-primary"
+                    >
+                      {p.title}
+                    </a>
+                  ) : (
+                    <h3 className="font-display text-xl font-semibold">{p.title}</h3>
+                  )}
+                  {p.link ? (
+                    <a href={p.link} target="_blank" rel="noopener noreferrer" aria-label={`Open ${p.title} on GitHub`}>
+                      <ArrowUpRight
+                        size={20}
+                        className="shrink-0 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary"
+                      />
+                    </a>
+                  ) : (
+                    <ArrowUpRight
+                      size={20}
+                      className="shrink-0 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary"
+                    />
+                  )}
                 </div>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
                 <div className="mt-5 flex flex-wrap gap-2">
