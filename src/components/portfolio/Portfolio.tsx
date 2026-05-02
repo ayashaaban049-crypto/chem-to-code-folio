@@ -6,6 +6,8 @@ import intl from "@/assets/project-intl.jpg";
 import chem from "@/assets/project-chemist.jpg";
 import digiliansDashboard from "@/assets/project-digilians-dashboard.png";
 import digiliansErd from "@/assets/project-digilians-erd.png";
+import digiliansMgmt from "@/assets/project-digilians-mgmt.jpg";
+import bodyPerformance from "@/assets/project-body-performance.jpg";
 
 type Project = {
   img: string;
@@ -14,6 +16,7 @@ type Project = {
   desc: string;
   tools: string[];
   tag: string;
+  link?: string;
 };
 
 const projects: Project[] = [
@@ -24,6 +27,22 @@ const projects: Project[] = [
     desc: "A comprehensive banking data project bridging backend data structures and executive decision-making. Designed a robust ERD covering customers, multi-type accounts, loans, merchant transactions, branches and employees, then built a professional BI dashboard tracking critical KPIs across a 39K-record dataset — average balance $100.54K, total loans $2.62bn, average credit score 575. Includes risk segmentation by credit category and loan status, account/card-type distribution, geographic breakdowns, and balance trends from 2019–2026 — turning relational banking data into clear, data-driven insight.",
     tools: ["SQL Server", "Power BI", "Excel", "ER Diagramming", "Data Modeling"],
     tag: "BI & Database",
+  },
+  {
+    img: digiliansMgmt,
+    title: "Digilians Bank — Management System",
+    desc: "End-to-end bank data analytics project covering relational database design, SQL business queries & views, Power BI interactive dashboard, and data cleaning. Built a complete schema with Branches, Employees, Customers, Accounts, and Transactions entities.",
+    tools: ["SQL", "Power BI", "Python", "Excel", "EDA"],
+    tag: "Data & BI",
+    link: "https://github.com/ayashaaban049-crypto/Bank-Management-System-Digilians",
+  },
+  {
+    img: bodyPerformance,
+    title: "Body Performance Analytics & Intelligent Classification System",
+    desc: "Full ML pipeline project analyzing human body performance data. Implemented and compared 5 machine learning models (KNN, Decision Tree, SVM, Neural Network, Linear Regression) with an interactive Streamlit web app for real-time fitness classification.",
+    tools: ["Python", "Streamlit", "Scikit-learn", "Machine Learning", "EDA"],
+    tag: "Machine Learning",
+    link: "https://github.com/ayashaaban049-crypto/Body-Performance-Analytics-and-Intelligent-main",
   },
   {
     img: gtx,
