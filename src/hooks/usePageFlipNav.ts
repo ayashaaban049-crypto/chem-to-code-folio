@@ -22,14 +22,15 @@ export const usePageFlipNav = () => {
       e.preventDefault();
       const root = document.getElementById("page-flip-root");
 
+      // Capture target position BEFORE any transform is applied,
+      // otherwise getBoundingClientRect returns projected (wrong) coords.
+      const targetTop = target.getBoundingClientRect().top + window.scrollY - 70;
+
       const scrollNow = () => {
-        const top = target.getBoundingClientRect().top + window.scrollY - 70;
-        // Force instant scroll regardless of CSS scroll-behavior
         const html = document.documentElement;
         const prev = html.style.scrollBehavior;
         html.style.scrollBehavior = "auto";
-        window.scrollTo({ top, behavior: "auto" });
-        // Restore on next frame
+        window.scrollTo({ top: targetTop, behavior: "auto" });
         requestAnimationFrame(() => {
           html.style.scrollBehavior = prev;
         });
