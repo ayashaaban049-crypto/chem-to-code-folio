@@ -27,7 +27,7 @@ export const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = schema.safeParse(form);
     if (!result.success) {
@@ -35,14 +35,24 @@ export const Contact = () => {
       return;
     }
     setLoading(true);
-    setTimeout(() => {
-      const subject = encodeURIComponent(`Portfolio inquiry from ${result.data.name}`);
-      const body = encodeURIComponent(`${result.data.message}\n\n— ${result.data.name} (${result.data.email})`);
-      window.location.href = `mailto:ayashaaban049@gmail.com?subject=${subject}&body=${body}`;
-      toast.success("Opening your email client…");
-      setLoading(false);
+    try {
+      const res = await fetch("https://formspree.io/f/xzdozoby", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: result.data.name,
+          email: result.data.email,
+          message: result.data.message,
+        }),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      toast.success("Message sent successfully! I'll get back to you soon 🎉");
       setForm({ name: "", email: "", message: "" });
-    }, 400);
+    } catch {
+      toast.error("Something went wrong, please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

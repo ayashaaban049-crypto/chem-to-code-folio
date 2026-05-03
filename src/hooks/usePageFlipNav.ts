@@ -22,28 +22,39 @@ export const usePageFlipNav = () => {
       e.preventDefault();
       const root = document.getElementById("page-flip-root");
 
-      const scrollTo = () => {
+      const scrollNow = () => {
         const top = target.getBoundingClientRect().top + window.scrollY - 70;
-        window.scrollTo({ top, behavior: reduce ? "auto" : "smooth" });
+        // Force instant scroll regardless of CSS scroll-behavior
+        const html = document.documentElement;
+        const prev = html.style.scrollBehavior;
+        html.style.scrollBehavior = "auto";
+        window.scrollTo({ top, behavior: "auto" });
+        // Restore on next frame
+        requestAnimationFrame(() => {
+          html.style.scrollBehavior = prev;
+        });
       };
 
       if (!root || reduce) {
-        scrollTo();
+        scrollNow();
         return;
       }
 
-      // Flip out -> scroll -> flip in
+      // Flip out -> instant scroll -> flip in
+      root.classList.remove("page-flip-in");
       root.classList.add("page-flipping");
       root.classList.add("page-flip-out");
 
       window.setTimeout(() => {
-        scrollTo();
+        scrollNow();
         root.classList.remove("page-flip-out");
+        // Force reflow so the flip-in animation restarts cleanly
+        void root.offsetWidth;
         root.classList.add("page-flip-in");
         window.setTimeout(() => {
           root.classList.remove("page-flip-in");
           root.classList.remove("page-flipping");
-        }, 450);
+        }, 360);
       }, 350);
     };
 

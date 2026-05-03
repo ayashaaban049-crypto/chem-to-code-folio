@@ -28,7 +28,6 @@ export const About = () => {
         <SectionHeading
           eyebrow="About me"
           title="A scientist who fell in love with data."
-          description="Junior Data Analyst with a strong scientific background in Chemistry and ongoing training in Data Analytics and Artificial Intelligence."
         />
 
         <motion.div
