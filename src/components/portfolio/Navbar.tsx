@@ -66,6 +66,7 @@ export const Navbar = () => {
         </nav>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <Button asChild variant="hero" size="sm" className="hidden sm:inline-flex">
             <a href="#contact">Hire me</a>
           </Button>
