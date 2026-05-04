@@ -2,7 +2,12 @@ import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 
-document.documentElement.classList.add("dark");
+const _storedTheme = localStorage.getItem("theme");
+if (_storedTheme === "light") {
+  document.documentElement.classList.remove("dark");
+} else {
+  document.documentElement.classList.add("dark");
+}
 
 // Global ripple effect for any element with the .ripple class
 if (typeof window !== "undefined") {
