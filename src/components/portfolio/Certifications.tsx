@@ -71,6 +71,12 @@ const certs: Cert[] = [
     verify: "https://coursera.org/verify/FZZLQO754Y6G",
   },
   {
+    title: "AI Workflow: Business Priorities and Data Ingestion",
+    issuer: "IBM · Coursera",
+    date: "May 2026",
+    verify: "https://coursera.org/verify/8NQVAHE4IM08",
+  },
+  {
     title: "Python Programming Basics",
     issuer: "ITI · Mahara-Tech (AI Academy)",
     date: "Apr 2026",
