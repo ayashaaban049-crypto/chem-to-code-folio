@@ -1,4 +1,4 @@
-import { ArrowUpRight, Briefcase, Sparkles, Globe2 } from "lucide-react";
+import { ArrowUpRight, Briefcase, Sparkles, Globe2, Languages, Building2, Handshake, Trees } from "lucide-react";
 import { motion } from "framer-motion";
 import { SectionHeading } from "./SectionHeading";
 import upworkImg from "@/assets/freelance-upwork.jpg";
@@ -24,7 +24,7 @@ const platforms: Platform[] = [
     img: upworkImg,
     icon: Briefcase,
     accent: "from-emerald-500/40 to-emerald-400/10",
-    link: "#",
+    link: "https://www.upwork.com/",
   },
   {
     name: "Fiverr",
@@ -33,7 +33,7 @@ const platforms: Platform[] = [
     img: fiverrImg,
     icon: Sparkles,
     accent: "from-lime-400/40 to-teal-400/10",
-    link: "#",
+    link: "https://www.fiverr.com/",
   },
   {
     name: "Freelancer",
@@ -42,7 +42,43 @@ const platforms: Platform[] = [
     img: freelancerImg,
     icon: Globe2,
     accent: "from-indigo-500/40 to-blue-500/10",
-    link: "#",
+    link: "https://www.freelancer.com/",
+  },
+  {
+    name: "Nafezly",
+    tagline: "Arabic freelance network",
+    desc: "Connect with me on Nafezly for data analytics, BI dashboards and AI-driven projects across the Arabic-speaking market.",
+    img: decorAnalytics,
+    icon: Languages,
+    accent: "from-rose-500/40 to-pink-400/10",
+    link: "https://nafezly.com/u/aya_shaaban",
+  },
+  {
+    name: "Mostaql",
+    tagline: "MENA freelance marketplace",
+    desc: "Hire me on Mostaql for end-to-end data analysis, reporting and machine learning solutions tailored for MENA businesses.",
+    img: decorAnalytics,
+    icon: Building2,
+    accent: "from-amber-500/40 to-orange-400/10",
+    link: "https://mostaql.com/u/aya_gameel94",
+  },
+  {
+    name: "Khamsat",
+    tagline: "Micro-services for data work",
+    desc: "Order quick data services on Khamsat — cleaning, visualization, Excel automation and short analytics deliverables.",
+    img: decorAnalytics,
+    icon: Handshake,
+    accent: "from-sky-500/40 to-cyan-400/10",
+    link: "https://khamsat.com/user/aya_shaaban94",
+  },
+  {
+    name: "Freelance Yard",
+    tagline: "Curated freelance community",
+    desc: "Reach me on Freelance Yard for tailored data analytics and AI engagements with a focus on quality and long-term work.",
+    img: decorAnalytics,
+    icon: Trees,
+    accent: "from-violet-500/40 to-fuchsia-400/10",
+    link: "https://freelanceyard.com/en/account/profile",
   },
 ];
 
