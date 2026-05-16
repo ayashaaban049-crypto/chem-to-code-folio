@@ -8,6 +8,7 @@ import { Portfolio } from "@/components/portfolio/Portfolio";
 import { Experience } from "@/components/portfolio/Experience";
 import { Education } from "@/components/portfolio/Education";
 import { Certifications } from "@/components/portfolio/Certifications";
+import { Freelancing } from "@/components/portfolio/Freelancing";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 import { CursorGlow } from "@/components/portfolio/CursorGlow";
@@ -48,6 +49,7 @@ const Index = () => {
         <Experience />
         <Education />
         <Certifications />
+        <Freelancing />
         <Contact />
       </div>
       <Footer />

@@ -14,6 +14,7 @@ const links = [
   { href: "#experience", label: "Experience" },
   { href: "#education", label: "Education" },
   { href: "#certifications", label: "Certifications" },
+  { href: "#freelancing", label: "Freelancing" },
   { href: "#contact", label: "Contact" },
 ];
 
