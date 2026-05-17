@@ -4,6 +4,10 @@ import { SectionHeading } from "./SectionHeading";
 import upworkImg from "@/assets/freelance-upwork.jpg";
 import fiverrImg from "@/assets/freelance-fiverr.jpg";
 import freelancerImg from "@/assets/freelance-freelancer.jpg";
+import nafezlyImg from "@/assets/freelance-nafezly.jpg";
+import mostaqlImg from "@/assets/freelance-mostaql.jpg";
+import khamsatImg from "@/assets/freelance-khamsat.jpg";
+import yardImg from "@/assets/freelance-yard.jpg";
 import decorAnalytics from "@/assets/decor-analytics.jpg";
 
 type Platform = {
@@ -48,7 +52,7 @@ const platforms: Platform[] = [
     name: "Nafezly",
     tagline: "Arabic freelance network",
     desc: "Connect with me on Nafezly for data analytics, BI dashboards and AI-driven projects across the Arabic-speaking market.",
-    img: decorAnalytics,
+    img: nafezlyImg,
     icon: Languages,
     accent: "from-rose-500/40 to-pink-400/10",
     link: "https://nafezly.com/u/aya_shaaban",
@@ -57,7 +61,7 @@ const platforms: Platform[] = [
     name: "Mostaql",
     tagline: "MENA freelance marketplace",
     desc: "Hire me on Mostaql for end-to-end data analysis, reporting and machine learning solutions tailored for MENA businesses.",
-    img: decorAnalytics,
+    img: mostaqlImg,
     icon: Building2,
     accent: "from-amber-500/40 to-orange-400/10",
     link: "https://mostaql.com/u/aya_gameel94",
@@ -66,7 +70,7 @@ const platforms: Platform[] = [
     name: "Khamsat",
     tagline: "Micro-services for data work",
     desc: "Order quick data services on Khamsat — cleaning, visualization, Excel automation and short analytics deliverables.",
-    img: decorAnalytics,
+    img: khamsatImg,
     icon: Handshake,
     accent: "from-sky-500/40 to-cyan-400/10",
     link: "https://khamsat.com/user/aya_shaaban94",
@@ -75,7 +79,7 @@ const platforms: Platform[] = [
     name: "Freelance Yard",
     tagline: "Curated freelance community",
     desc: "Reach me on Freelance Yard for tailored data analytics and AI engagements with a focus on quality and long-term work.",
-    img: decorAnalytics,
+    img: yardImg,
     icon: Trees,
     accent: "from-violet-500/40 to-fuchsia-400/10",
     link: "https://freelanceyard.com/en/account/profile",
