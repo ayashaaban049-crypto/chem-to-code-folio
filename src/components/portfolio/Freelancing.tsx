@@ -26,7 +26,7 @@ const platforms: Platform[] = [
     bg: "from-emerald-950 via-emerald-900/60 to-slate-950",
     brand: "text-emerald-400",
     glow: "rgba(16,185,129,0.35)",
-    link: "https://www.upwork.com/",
+    link: "https://www.upwork.com/freelancers/~013bcc52ecf9e82770",
   },
   {
     name: "Fiverr",
@@ -46,7 +46,7 @@ const platforms: Platform[] = [
     bg: "from-sky-950 via-blue-900/60 to-slate-950",
     brand: "text-sky-400",
     glow: "rgba(56,189,248,0.35)",
-    link: "https://www.freelancer.com/",
+    link: "https://www.freelancer.com/u/ayas393",
   },
   {
     name: "Nafezly",
@@ -121,7 +121,14 @@ export const Freelancing = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="glass-card group relative flex flex-col overflow-hidden"
+                className="glass-card group relative flex flex-col overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-primary/70"
+                style={{ ['--platform-glow' as any]: p.glow }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.boxShadow = `0 20px 50px -10px ${p.glow}, 0 0 30px ${p.glow}`;
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.boxShadow = '';
+                }}
               >
                 <div
                   className={`relative aspect-[16/10] overflow-hidden bg-gradient-to-br ${p.bg}`}
