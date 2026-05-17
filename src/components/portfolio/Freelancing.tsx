@@ -4,6 +4,10 @@ import { SectionHeading } from "./SectionHeading";
 import upworkImg from "@/assets/freelance-upwork.jpg";
 import fiverrImg from "@/assets/freelance-fiverr.jpg";
 import freelancerImg from "@/assets/freelance-freelancer.jpg";
+import nafezlyImg from "@/assets/freelance-nafezly.jpg";
+import mostaqlImg from "@/assets/freelance-mostaql.jpg";
+import khamsatImg from "@/assets/freelance-khamsat.jpg";
+import yardImg from "@/assets/freelance-yard.jpg";
 import decorAnalytics from "@/assets/decor-analytics.jpg";
 
 type Platform = {
