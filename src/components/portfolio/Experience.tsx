@@ -1,10 +1,9 @@
-import { Briefcase } from "lucide-react";
+import { Briefcase, Pill, LucideIcon } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 import digiliansLogo from "@/assets/digilians-logo.jpg";
 import naliLogo from "@/assets/nali-logo.jpg";
 import ultralabLogo from "@/assets/ultralab-logo.png";
 import groupPhoto from "@/assets/digital-pioneers-group.png";
-import expPharma from "@/assets/exp-pharma.jpg";
 import expLab from "@/assets/exp-lab.jpg";
 
 type Item = {
@@ -16,6 +15,7 @@ type Item = {
   image?: string;
   imageAlt?: string;
   imageCaption?: string;
+  accentIcon?: LucideIcon;
 };
 
 const items: Item[] = [
@@ -39,8 +39,7 @@ const items: Item[] = [
     period: "2017 — 2019",
     logo: naliLogo,
     points: ["Sales and client relationship management across pharmaceutical accounts."],
-    image: expPharma,
-    imageAlt: "Modern pharmaceutical doctor's briefcase with stethoscope",
+    accentIcon: Pill,
   },
   {
     role: "Chemist",
@@ -49,7 +48,7 @@ const items: Item[] = [
     logo: ultralabLogo,
     points: ["Laboratory testing and analysis with strict protocol adherence."],
     image: expLab,
-    imageAlt: "High-tech laboratory with glowing molecular structures",
+    imageAlt: "Glowing blue beaker with chemical formulas in a cosmic laboratory setting",
   },
 ];
 
@@ -175,7 +174,14 @@ export const Experience = () => {
                         />
                       )}
                       <div>
-                        <h3 className="font-display text-lg font-semibold">{it.role}</h3>
+                        <h3 className="flex items-center gap-2 font-display text-lg font-semibold">
+                          {it.accentIcon && (
+                            <span className="grid h-7 w-7 place-items-center rounded-md border border-primary/30 bg-primary/10 text-primary">
+                              <it.accentIcon size={14} />
+                            </span>
+                          )}
+                          {it.role}
+                        </h3>
                         <p className="mt-1 text-sm text-muted-foreground">{it.org}</p>
                       </div>
                     </div>
