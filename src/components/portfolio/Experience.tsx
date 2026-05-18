@@ -39,8 +39,7 @@ const items: Item[] = [
     period: "2017 — 2019",
     logo: naliLogo,
     points: ["Sales and client relationship management across pharmaceutical accounts."],
-    image: expPharma,
-    imageAlt: "Modern pharmaceutical doctor's briefcase with stethoscope",
+    accentIcon: Pill,
   },
   {
     role: "Chemist",
@@ -49,7 +48,7 @@ const items: Item[] = [
     logo: ultralabLogo,
     points: ["Laboratory testing and analysis with strict protocol adherence."],
     image: expLab,
-    imageAlt: "High-tech laboratory with glowing molecular structures",
+    imageAlt: "Glowing blue beaker with chemical formulas in a cosmic laboratory setting",
   },
 ];
 
