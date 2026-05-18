@@ -1,9 +1,16 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
+
+const showArabicSoon = () =>
+  toast("Arabic version coming soon!", {
+    description: "النسخة العربية قادمة قريباً!",
+    duration: 3500,
+  });
 
 const links = [
   { href: "#home", label: "Home" },
@@ -67,6 +74,14 @@ export const Navbar = () => {
         </nav>
 
         <div className="flex items-center gap-2">
+          <button
+            onClick={showArabicSoon}
+            className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-surface/60 px-3 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-primary/60 hover:bg-surface-elevated hover:text-foreground hover:shadow-glow-sm"
+            aria-label="Switch to Arabic"
+          >
+            <Globe size={14} className="text-primary" />
+            العربية
+          </button>
           <ThemeToggle />
           <Button asChild variant="hero" size="sm" className="hidden sm:inline-flex">
             <a href="#contact">Hire me</a>
@@ -94,6 +109,16 @@ export const Navbar = () => {
                 {l.label}
               </a>
             ))}
+            <button
+              onClick={() => {
+                setOpen(false);
+                showArabicSoon();
+              }}
+              className="mt-1 flex w-full items-center gap-2 rounded-xl px-4 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-surface-elevated hover:text-foreground"
+            >
+              <Globe size={14} className="text-primary" />
+              العربية
+            </button>
           </div>
         </div>
       )}
