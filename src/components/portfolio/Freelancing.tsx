@@ -1,4 +1,4 @@
-import { ArrowUpRight, Briefcase, Sparkles, Globe2, Languages, Building2, Handshake, Trees } from "lucide-react";
+import { ArrowUpRight, Briefcase, Globe2, Languages, Building2, Handshake, Trees } from "lucide-react";
 import { motion } from "framer-motion";
 import { SectionHeading } from "./SectionHeading";
 import decorAnalytics from "@/assets/decor-analytics.jpg";
@@ -27,16 +27,6 @@ const platforms: Platform[] = [
     brand: "text-emerald-400",
     glow: "rgba(16,185,129,0.35)",
     link: "https://www.upwork.com/freelancers/~013bcc52ecf9e82770",
-  },
-  {
-    name: "Fiverr",
-    tagline: "Productized data services",
-    desc: "Order ready-to-go gigs — Excel cleaning, Power BI dashboards, EDA reports and ML prototypes, delivered fast.",
-    icon: Sparkles,
-    bg: "from-lime-950 via-green-900/60 to-slate-950",
-    brand: "text-lime-400",
-    glow: "rgba(132,204,22,0.35)",
-    link: "https://www.fiverr.com/",
   },
   {
     name: "Freelancer",
