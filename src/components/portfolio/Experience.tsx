@@ -174,7 +174,14 @@ export const Experience = () => {
                         />
                       )}
                       <div>
-                        <h3 className="font-display text-lg font-semibold">{it.role}</h3>
+                        <h3 className="flex items-center gap-2 font-display text-lg font-semibold">
+                          {it.accentIcon && (
+                            <span className="grid h-7 w-7 place-items-center rounded-md border border-primary/30 bg-primary/10 text-primary">
+                              <it.accentIcon size={14} />
+                            </span>
+                          )}
+                          {it.role}
+                        </h3>
                         <p className="mt-1 text-sm text-muted-foreground">{it.org}</p>
                       </div>
                     </div>
