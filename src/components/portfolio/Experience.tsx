@@ -1,10 +1,9 @@
-import { Briefcase } from "lucide-react";
+import { Briefcase, Pill, LucideIcon } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 import digiliansLogo from "@/assets/digilians-logo.jpg";
 import naliLogo from "@/assets/nali-logo.jpg";
 import ultralabLogo from "@/assets/ultralab-logo.png";
 import groupPhoto from "@/assets/digital-pioneers-group.png";
-import expPharma from "@/assets/exp-pharma.jpg";
 import expLab from "@/assets/exp-lab.jpg";
 
 type Item = {
@@ -16,6 +15,7 @@ type Item = {
   image?: string;
   imageAlt?: string;
   imageCaption?: string;
+  accentIcon?: LucideIcon;
 };
 
 const items: Item[] = [
