@@ -143,9 +143,9 @@ export const Hero = () => {
               <a href="#contact">Contact Me</a>
             </Button>
           </MagneticButton>
-          <Button asChild variant="ghost" size="lg" className="text-muted-foreground hover:text-foreground border-draw">
-            <a href="#about">
-              <Download size={16} /> Download CV
+          <Button asChild variant="glass" size="lg" className="group text-foreground border-draw">
+            <a href="/Aya_Shaaban_CV.pdf" download="Aya_Shaaban_CV.pdf">
+              <Download size={16} className="animate-bounce transition-transform group-hover:translate-y-0.5" /> Download CV
             </a>
           </Button>
         </motion.div>
