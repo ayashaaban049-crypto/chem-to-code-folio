@@ -5,6 +5,7 @@ import naliLogo from "@/assets/nali-logo.jpg";
 import ultralabLogo from "@/assets/ultralab-logo.png";
 import groupPhoto from "@/assets/digital-pioneers-group.png";
 import expLab from "@/assets/exp-lab.jpg";
+import expPharma from "@/assets/exp-pharma.jpg";
 
 type Item = {
   role: string;
@@ -40,6 +41,8 @@ const items: Item[] = [
     logo: naliLogo,
     points: ["Sales and client relationship management across pharmaceutical accounts."],
     accentIcon: Pill,
+    image: expPharma,
+    imageAlt: "Professional pharmaceutical visual with pills and medical elements",
   },
   {
     role: "Chemist",
