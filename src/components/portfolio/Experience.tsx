@@ -5,6 +5,7 @@ import naliLogo from "@/assets/nali-logo.jpg";
 import ultralabLogo from "@/assets/ultralab-logo.png";
 import groupPhoto from "@/assets/digital-pioneers-group.png";
 import expLab from "@/assets/exp-lab.jpg";
+import expPharma from "@/assets/exp-pharma.jpg";
 
 type Item = {
   role: string;
