@@ -41,6 +41,8 @@ const items: Item[] = [
     logo: naliLogo,
     points: ["Sales and client relationship management across pharmaceutical accounts."],
     accentIcon: Pill,
+    image: expPharma,
+    imageAlt: "Professional pharmaceutical visual with pills and medical elements",
   },
   {
     role: "Chemist",
