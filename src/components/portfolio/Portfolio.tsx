@@ -69,14 +69,16 @@ const projects: Project[] = [
 ];
 
 export const Portfolio = () => {
+  const { t } = useLang();
   return (
     <section id="portfolio" className="section-pad">
       <div className="container-tight">
         <SectionHeading
-          eyebrow="Portfolio"
-          title="Featured work."
-          description="A selection of dashboards and projects from my training and ongoing learning journey."
+          eyebrow={t.portfolio.eyebrow}
+          title={t.portfolio.title}
+          description={t.portfolio.description}
         />
+
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((p, i) => (
@@ -115,7 +117,7 @@ export const Portfolio = () => {
                   {p.tag}
                 </span>
                 <div className="card-overlay">
-                  <p className="text-xs text-foreground/90">{p.bgImg ? "Hover to reveal the ERD schema →" : `Click to explore the ${p.tag.toLowerCase()} →`}</p>
+                  <p className="text-xs text-foreground/90">{p.bgImg ? t.portfolio.hoverErd : t.portfolio.hoverExplore(p.tag)}</p>
                 </div>
               </div>
               <div className="flex flex-1 flex-col p-6">
