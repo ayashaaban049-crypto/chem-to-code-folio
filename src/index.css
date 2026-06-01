@@ -404,3 +404,14 @@
   #page-flip-root.page-flip-out,
   #page-flip-root.page-flip-in { transform: none !important; opacity: 1 !important; filter: none !important; animation: none !important; }
 }
+
+/* Arabic / RTL support */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
+
+html[dir="rtl"] body,
+html[dir="rtl"] {
+  font-family: 'Cairo', 'Inter', system-ui, sans-serif;
+}
+html[dir="rtl"] .font-display {
+  font-family: 'Cairo', 'Space Grotesk', sans-serif;
+}
