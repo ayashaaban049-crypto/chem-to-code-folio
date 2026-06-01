@@ -219,6 +219,6 @@ export const translations = {
     },
     footer: { rights: "جميع الحقوق محفوظة.", crafted: "صُنع بعناية · القاهرة، مصر" },
   },
-} as const;
+};
 
 export type Dict = typeof translations.en;
