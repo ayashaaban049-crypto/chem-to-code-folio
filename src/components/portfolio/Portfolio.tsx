@@ -8,6 +8,7 @@ import digiliansDashboard from "@/assets/project-digilians-dashboard.png";
 import digiliansErd from "@/assets/project-digilians-erd.png";
 import digiliansMgmt from "@/assets/project-digilians-mgmt.jpg";
 import bodyPerformance from "@/assets/project-body-performance.jpg";
+import { useLang } from "@/contexts/LanguageContext";
 
 type Project = {
   img: string;
