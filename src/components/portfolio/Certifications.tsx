@@ -16,6 +16,8 @@ const certs: Cert[] = [
   { title: "Google Data Analytics Capstone: Complete a Case Study", issuer: "Google · Coursera", date: "Apr 2026", verify: "https://coursera.org/verify/WGVBDT1JWR2L" },
   { title: "Accelerate Your Job Search with AI", issuer: "Google · Coursera", date: "Apr 2026", verify: "https://coursera.org/verify/FZZLQO754Y6G" },
   { title: "AI Workflow: Business Priorities and Data Ingestion", issuer: "IBM · Coursera", date: "May 2026", verify: "https://coursera.org/verify/8NQVAHE4IM08" },
+  { title: "AI Workflow: Feature Engineering and Bias Detection", issuer: "IBM · Coursera", date: "May 2026", verify: "https://coursera.org/verify/LZIY0MB1EGAD" },
+  { title: "AI Workflow: Machine Learning, Visual Recognition and NLP", issuer: "IBM · Coursera", date: "May 2026", verify: "https://coursera.org/verify/TWALV6UC93W1" },
   { title: "Python Programming Basics", issuer: "ITI · Mahara-Tech (AI Academy)", date: "Apr 2026" },
   { title: "Fundamentals of Digital Transformation", issuer: "TCEU · Zagazig University (5 Mandatory + 2 Electives: Networks, Mobile App)", date: "Sep 2022" },
 ];
