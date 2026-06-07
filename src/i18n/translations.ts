@@ -33,7 +33,7 @@ export const translations = {
       eyebrow: "Skills", title: "Tools, methods, and instincts.",
       description: "A blend of analytical, scientific, and communication skills built across years of lab work and modern data training.",
       groups: [
-        { title: "Technical", items: ["Data Analysis & Cleaning","Exploratory Data Analysis (EDA)","Statistical Analysis","Python · NumPy · Pandas · Matplotlib","Machine Learning Fundamentals","Supervised & Unsupervised Learning","SQL Basics","Power BI & Excel Dashboards","Feature Engineering","Model Evaluation"] },
+        { title: "Technical", items: ["Data Analysis & Cleaning","Exploratory Data Analysis (EDA)","Statistical Analysis & IBM SPSS","Python (NumPy · Pandas · Matplotlib · Seaborn)","SQL Server (Advanced Queries & Joins)","Power BI & Interactive Dashboards","Advanced Excel (VBA, Macros & Power Query)","Machine Learning & Feature Engineering","Time-Series Forecasting","Deep Learning & Computer Vision (CNN)","Model Evaluation & Optimization"] },
         { title: "Pharmacoinformatics", items: ["Biomedical Data Analysis","Drug Data Interpretation","Clinical Dataset Analysis","Healthcare Data Analytics"] },
         { title: "Soft Skills", items: ["Analytical Thinking","Problem Solving","Communication","Teamwork","Time Management"] },
         { title: "Languages", items: ["Arabic — Native","English — Excellent"] },
@@ -62,7 +62,7 @@ export const translations = {
       eyebrow: "Experience", title: "A path from lab bench to dataset.",
       items: [
         { role: "Junior Data Analyst", org: "Digital Pioneers Initiative — MCIT & Military Technical College", period: "2025 — Present",
-          points: ["Data analysis using Python, SQL, Excel and Power BI","Machine learning fundamentals and insight extraction","Data cleaning, feature engineering and visualization"],
+          points: ["Advanced data analytics, transformation, and interactive dashboarding using Python, SQL Server, Power BI, and Excel (VBA/Macros).","Developing predictive modeling, Deep Learning architectures (CNN), and Computer Vision solutions for Applied AI tracks.","End-to-end data preprocessing, feature engineering, and advanced Time-Series forecasting for smart system solutions."],
           imageCaption: "Commemorative photo from the Digital Pioneers Initiative launch" },
         { role: "Medical Representative", org: "Nali Pharma International", period: "2017 — 2019",
           points: ["Sales and client relationship management across pharmaceutical accounts."] },
@@ -142,7 +142,7 @@ export const translations = {
       eyebrow: "المهارات", title: "أدوات ومناهج وحدس.",
       description: "مزيج من المهارات التحليلية والعلمية والتواصلية مبني عبر سنوات من العمل المختبري والتدريب الحديث على البيانات.",
       groups: [
-        { title: "تقنية", items: ["تحليل وتنظيف البيانات","التحليل الاستكشافي للبيانات (EDA)","التحليل الإحصائي","Python · NumPy · Pandas · Matplotlib","أساسيات تعلم الآلة","التعلم الموجّه وغير الموجّه","أساسيات SQL","لوحات Power BI و Excel","هندسة الميزات","تقييم النماذج"] },
+        { title: "تقنية", items: ["تحليل وتنظيف البيانات","التحليل الاستكشافي للبيانات (EDA)","التحليل الإحصائي و IBM SPSS","Python (NumPy · Pandas · Matplotlib · Seaborn)","SQL Server (استعلامات وروابط متقدمة)","Power BI ولوحات البيانات التفاعلية","Excel المتقدم (VBA، وحدات ماكرو و Power Query)","تعلم الآلة وهندسة الميزات","التنبؤ بالسلاسل الزمنية","التعلم العميق ورؤية الحاسوب (CNN)","تقييم النماذج وتحسينها"] },
         { title: "المعلوماتية الدوائية", items: ["تحليل البيانات الطبية الحيوية","تفسير بيانات الأدوية","تحليل مجموعات البيانات السريرية","تحليلات بيانات الرعاية الصحية"] },
         { title: "المهارات الشخصية", items: ["التفكير التحليلي","حل المشكلات","التواصل","العمل الجماعي","إدارة الوقت"] },
         { title: "اللغات", items: ["العربية — اللغة الأم","الإنجليزية — ممتاز"] },
@@ -171,7 +171,7 @@ export const translations = {
       eyebrow: "الخبرات", title: "رحلة من طاولة المختبر إلى مجموعة البيانات.",
       items: [
         { role: "محللة بيانات مبتدئة", org: "مبادرة الرواد الرقميين — وزارة الاتصالات والكلية الفنية العسكرية", period: "2025 — حتى الآن",
-          points: ["تحليل البيانات باستخدام Python و SQL و Excel و Power BI","أساسيات تعلم الآلة واستخلاص الرؤى","تنظيف البيانات وهندسة الميزات والتصور البصري"],
+          points: ["تحليل بيانات متقدم وتحويل ولوحات بيانات تفاعلية باستخدام Python و SQL Server و Power BI و Excel (VBA/وحدات ماكرو).","تطوير النمذجة التنبؤية وهياكل التعلم العميق (CNN) وحلول رؤية الحاسوب لمسارات الذكاء الاصطناعي التطبيقي.","معالجة البيانات الشاملة وهندسة الميزات والتنبؤ المتقدم بالسلاسل الزمنية لحلول الأنظمة الذكية."],
           imageCaption: "صورة تذكارية من انطلاق مبادرة الرواد الرقميين" },
         { role: "مندوبة طبية", org: "نالي فارما إنترناشيونال", period: "2017 — 2019",
           points: ["إدارة المبيعات وعلاقات العملاء عبر الحسابات الصيدلانية."] },
