@@ -84,6 +84,76 @@ const projects: Project[] = [
   },
 ];
 
+const ProjectMedia = ({ p, hoverErd, hoverExplore }: { p: Project; hoverErd: string; hoverExplore: (tag: string) => string }) => {
+  const [idx, setIdx] = useState(0);
+  const gallery = p.images && p.images.length > 1 ? p.images : null;
+  const current = gallery ? gallery[idx] : p.img;
+  const go = (e: React.MouseEvent, dir: 1 | -1) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!gallery) return;
+    setIdx((i) => (i + dir + gallery.length) % gallery.length);
+  };
+  return (
+    <div className="relative aspect-[16/10] overflow-hidden">
+      {p.bgImg && (
+        <img
+          src={p.bgImg}
+          alt=""
+          aria-hidden
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover opacity-40 mix-blend-luminosity transition-all duration-700 group-hover:opacity-80 group-hover:mix-blend-normal group-hover:scale-110"
+          width={1024}
+          height={640}
+        />
+      )}
+      <img
+        src={current}
+        alt={p.title}
+        loading="lazy"
+        className={`relative h-full w-full object-cover transition-all duration-700 group-hover:scale-110 ${
+          p.bgImg ? "group-hover:opacity-0" : ""
+        }`}
+        width={1024}
+        height={640}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
+      <span className="absolute left-4 top-4 chip border-primary/40 text-primary">{p.tag}</span>
+      {gallery && (
+        <>
+          <button
+            type="button"
+            onClick={(e) => go(e, -1)}
+            aria-label="Previous image"
+            className="absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-background/70 p-2 text-foreground backdrop-blur transition hover:bg-background"
+          >
+            <ChevronLeft size={16} />
+          </button>
+          <button
+            type="button"
+            onClick={(e) => go(e, 1)}
+            aria-label="Next image"
+            className="absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-background/70 p-2 text-foreground backdrop-blur transition hover:bg-background"
+          >
+            <ChevronRight size={16} />
+          </button>
+          <div className="absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 gap-1.5">
+            {gallery.map((_, i) => (
+              <span
+                key={i}
+                className={`h-1.5 rounded-full transition-all ${i === idx ? "w-5 bg-primary" : "w-1.5 bg-foreground/40"}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+      <div className="card-overlay">
+        <p className="text-xs text-foreground/90">{p.bgImg ? hoverErd : hoverExplore(p.tag)}</p>
+      </div>
+    </div>
+  );
+};
+
 export const Portfolio = () => {
   const { t } = useLang();
   return (
