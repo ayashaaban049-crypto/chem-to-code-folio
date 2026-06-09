@@ -1,5 +1,6 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { SectionHeading } from "./SectionHeading";
 import gtx from "@/assets/project-gtx.jpg";
 import intl from "@/assets/project-intl.jpg";
@@ -8,11 +9,17 @@ import digiliansDashboard from "@/assets/project-digilians-dashboard.png";
 import digiliansErd from "@/assets/project-digilians-erd.png";
 import digiliansMgmt from "@/assets/project-digilians-mgmt.jpg";
 import bodyPerformance from "@/assets/project-body-performance.jpg";
+import gtxMain from "@/assets/gtx-dashboard-main.png";
+import gtxDecomp from "@/assets/gtx-decomposition.png";
+import gtxKey from "@/assets/gtx-key-influencers.png";
+import gtxMap from "@/assets/gtx-map.png";
 import { useLang } from "@/contexts/LanguageContext";
+
 
 type Project = {
   img: string;
   bgImg?: string;
+  images?: string[];
   title: string;
   desc: string;
   tools: string[];
@@ -46,12 +53,21 @@ const projects: Project[] = [
     link: "https://github.com/ayashaaban049-crypto/Body-Performance-Analytics-and-Intelligent-main",
   },
   {
+    img: gtxMain,
+    images: [gtxMain, gtxDecomp, gtxKey, gtxMap],
+    title: "GTX Sales Dashboard — Power BI",
+    desc: "Interactive sales dashboard built in Power BI analyzing $20.94M in total sales across 9K orders. Features include monthly sales treemap, waterfall chart by product, top 15 sales agents bar chart, donut charts for manager and regional office breakdown, global sales map, decomposition tree for drill-down analysis, and AI-powered key influencers visual identifying GTK 500 as the top sales price driver.",
+    tools: ["Power BI", "Data Visualization", "Sales Analytics", "DAX", "Business Intelligence"],
+    tag: "Dashboard",
+  },
+  {
     img: gtx,
     title: "GTX Sales Dashboard",
     desc: "Interactive sales analysis with sector revenue insights, regional office performance, product-level waterfall analysis and sales-agent comparisons.",
     tools: ["Power BI", "Excel", "DAX"],
     tag: "Dashboard",
   },
+
   {
     img: intl,
     title: "International Sales Dashboard 2023",
@@ -67,6 +83,76 @@ const projects: Project[] = [
     tag: "Talk",
   },
 ];
+
+const ProjectMedia = ({ p, hoverErd, hoverExplore }: { p: Project; hoverErd: string; hoverExplore: (tag: string) => string }) => {
+  const [idx, setIdx] = useState(0);
+  const gallery = p.images && p.images.length > 1 ? p.images : null;
+  const current = gallery ? gallery[idx] : p.img;
+  const go = (e: React.MouseEvent, dir: 1 | -1) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!gallery) return;
+    setIdx((i) => (i + dir + gallery.length) % gallery.length);
+  };
+  return (
+    <div className="relative aspect-[16/10] overflow-hidden">
+      {p.bgImg && (
+        <img
+          src={p.bgImg}
+          alt=""
+          aria-hidden
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover opacity-40 mix-blend-luminosity transition-all duration-700 group-hover:opacity-80 group-hover:mix-blend-normal group-hover:scale-110"
+          width={1024}
+          height={640}
+        />
+      )}
+      <img
+        src={current}
+        alt={p.title}
+        loading="lazy"
+        className={`relative h-full w-full object-cover transition-all duration-700 group-hover:scale-110 ${
+          p.bgImg ? "group-hover:opacity-0" : ""
+        }`}
+        width={1024}
+        height={640}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
+      <span className="absolute left-4 top-4 chip border-primary/40 text-primary">{p.tag}</span>
+      {gallery && (
+        <>
+          <button
+            type="button"
+            onClick={(e) => go(e, -1)}
+            aria-label="Previous image"
+            className="absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-background/70 p-2 text-foreground backdrop-blur transition hover:bg-background"
+          >
+            <ChevronLeft size={16} />
+          </button>
+          <button
+            type="button"
+            onClick={(e) => go(e, 1)}
+            aria-label="Next image"
+            className="absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full bg-background/70 p-2 text-foreground backdrop-blur transition hover:bg-background"
+          >
+            <ChevronRight size={16} />
+          </button>
+          <div className="absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 gap-1.5">
+            {gallery.map((_, i) => (
+              <span
+                key={i}
+                className={`h-1.5 rounded-full transition-all ${i === idx ? "w-5 bg-primary" : "w-1.5 bg-foreground/40"}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+      <div className="card-overlay">
+        <p className="text-xs text-foreground/90">{p.bgImg ? hoverErd : hoverExplore(p.tag)}</p>
+      </div>
+    </div>
+  );
+};
 
 export const Portfolio = () => {
   const { t } = useLang();
@@ -90,36 +176,8 @@ export const Portfolio = () => {
               transition={{ duration: 0.6, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
               className="glass-card tilt-card group flex flex-col overflow-hidden"
             >
-              <div className="relative aspect-[16/10] overflow-hidden">
-                {p.bgImg && (
-                  <img
-                    src={p.bgImg}
-                    alt=""
-                    aria-hidden
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover opacity-40 mix-blend-luminosity transition-all duration-700 group-hover:opacity-80 group-hover:mix-blend-normal group-hover:scale-110"
-                    width={1024}
-                    height={640}
-                  />
-                )}
-                <img
-                  src={p.img}
-                  alt={p.title}
-                  loading="lazy"
-                  className={`relative h-full w-full object-cover transition-all duration-700 group-hover:scale-110 ${
-                    p.bgImg ? "group-hover:opacity-0" : ""
-                  }`}
-                  width={1024}
-                  height={640}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
-                <span className="absolute left-4 top-4 chip border-primary/40 text-primary">
-                  {p.tag}
-                </span>
-                <div className="card-overlay">
-                  <p className="text-xs text-foreground/90">{p.bgImg ? t.portfolio.hoverErd : t.portfolio.hoverExplore(p.tag)}</p>
-                </div>
-              </div>
+              <ProjectMedia p={p} hoverErd={t.portfolio.hoverErd} hoverExplore={t.portfolio.hoverExplore} />
+
               <div className="flex flex-1 flex-col p-6">
                 <div className="flex items-start justify-between gap-3">
                   {p.link ? (
