@@ -62,13 +62,6 @@ const projects: Project[] = [
     tag: "Dashboard",
   },
   {
-    img: gtxPowerBi,
-    title: "GTX Sales Dashboard — Power BI",
-    desc: "Interactive sales dashboard analyzing $20.94M in total sales across 9K orders. Features monthly sales treemap, waterfall chart by product, top 15 sales agents, donut charts, global sales map, decomposition tree, and AI-powered key influencers visual.",
-    tools: ["Power BI", "Data Visualization", "Sales Analytics", "DAX", "Business Intelligence"],
-    tag: "Dashboard",
-  },
-  {
     img: gtx,
     title: "GTX Sales Dashboard",
     desc: "Interactive sales analysis with sector revenue insights, regional office performance, product-level waterfall analysis and sales-agent comparisons.",
