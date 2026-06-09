@@ -106,36 +106,8 @@ export const Portfolio = () => {
               transition={{ duration: 0.6, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
               className="glass-card tilt-card group flex flex-col overflow-hidden"
             >
-              <div className="relative aspect-[16/10] overflow-hidden">
-                {p.bgImg && (
-                  <img
-                    src={p.bgImg}
-                    alt=""
-                    aria-hidden
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover opacity-40 mix-blend-luminosity transition-all duration-700 group-hover:opacity-80 group-hover:mix-blend-normal group-hover:scale-110"
-                    width={1024}
-                    height={640}
-                  />
-                )}
-                <img
-                  src={p.img}
-                  alt={p.title}
-                  loading="lazy"
-                  className={`relative h-full w-full object-cover transition-all duration-700 group-hover:scale-110 ${
-                    p.bgImg ? "group-hover:opacity-0" : ""
-                  }`}
-                  width={1024}
-                  height={640}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
-                <span className="absolute left-4 top-4 chip border-primary/40 text-primary">
-                  {p.tag}
-                </span>
-                <div className="card-overlay">
-                  <p className="text-xs text-foreground/90">{p.bgImg ? t.portfolio.hoverErd : t.portfolio.hoverExplore(p.tag)}</p>
-                </div>
-              </div>
+              <ProjectMedia p={p} hoverErd={t.portfolio.hoverErd} hoverExplore={t.portfolio.hoverExplore} />
+
               <div className="flex flex-1 flex-col p-6">
                 <div className="flex items-start justify-between gap-3">
                   {p.link ? (
