@@ -1,5 +1,6 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { SectionHeading } from "./SectionHeading";
 import gtx from "@/assets/project-gtx.jpg";
 import intl from "@/assets/project-intl.jpg";
@@ -8,11 +9,17 @@ import digiliansDashboard from "@/assets/project-digilians-dashboard.png";
 import digiliansErd from "@/assets/project-digilians-erd.png";
 import digiliansMgmt from "@/assets/project-digilians-mgmt.jpg";
 import bodyPerformance from "@/assets/project-body-performance.jpg";
+import gtxMain from "@/assets/gtx-dashboard-main.png";
+import gtxDecomp from "@/assets/gtx-decomposition.png";
+import gtxKey from "@/assets/gtx-key-influencers.png";
+import gtxMap from "@/assets/gtx-map.png";
 import { useLang } from "@/contexts/LanguageContext";
+
 
 type Project = {
   img: string;
   bgImg?: string;
+  images?: string[];
   title: string;
   desc: string;
   tools: string[];
