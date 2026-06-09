@@ -13,6 +13,7 @@ import gtxMain from "@/assets/gtx-dashboard-main.png";
 import gtxDecomp from "@/assets/gtx-decomposition.png";
 import gtxKey from "@/assets/gtx-key-influencers.png";
 import gtxMap from "@/assets/gtx-map.png";
+import gtxPowerBi from "@/assets/gtx-dashboard-powerbi.png";
 import { useLang } from "@/contexts/LanguageContext";
 
 
@@ -57,6 +58,13 @@ const projects: Project[] = [
     images: [gtxMain, gtxDecomp, gtxKey, gtxMap],
     title: "GTX Sales Dashboard — Power BI",
     desc: "Interactive sales dashboard built in Power BI analyzing $20.94M in total sales across 9K orders. Features include monthly sales treemap, waterfall chart by product, top 15 sales agents bar chart, donut charts for manager and regional office breakdown, global sales map, decomposition tree for drill-down analysis, and AI-powered key influencers visual identifying GTK 500 as the top sales price driver.",
+    tools: ["Power BI", "Data Visualization", "Sales Analytics", "DAX", "Business Intelligence"],
+    tag: "Dashboard",
+  },
+  {
+    img: gtxPowerBi,
+    title: "GTX Sales Dashboard — Power BI",
+    desc: "Interactive sales dashboard analyzing $20.94M in total sales across 9K orders. Features monthly sales treemap, waterfall chart by product, top 15 sales agents, donut charts, global sales map, decomposition tree, and AI-powered key influencers visual.",
     tools: ["Power BI", "Data Visualization", "Sales Analytics", "DAX", "Business Intelligence"],
     tag: "Dashboard",
   },
