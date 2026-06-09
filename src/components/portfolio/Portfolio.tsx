@@ -53,12 +53,21 @@ const projects: Project[] = [
     link: "https://github.com/ayashaaban049-crypto/Body-Performance-Analytics-and-Intelligent-main",
   },
   {
+    img: gtxMain,
+    images: [gtxMain, gtxDecomp, gtxKey, gtxMap],
+    title: "GTX Sales Dashboard — Power BI",
+    desc: "Interactive sales dashboard built in Power BI analyzing $20.94M in total sales across 9K orders. Features include monthly sales treemap, waterfall chart by product, top 15 sales agents bar chart, donut charts for manager and regional office breakdown, global sales map, decomposition tree for drill-down analysis, and AI-powered key influencers visual identifying GTK 500 as the top sales price driver.",
+    tools: ["Power BI", "Data Visualization", "Sales Analytics", "DAX", "Business Intelligence"],
+    tag: "Dashboard",
+  },
+  {
     img: gtx,
     title: "GTX Sales Dashboard",
     desc: "Interactive sales analysis with sector revenue insights, regional office performance, product-level waterfall analysis and sales-agent comparisons.",
     tools: ["Power BI", "Excel", "DAX"],
     tag: "Dashboard",
   },
+
   {
     img: intl,
     title: "International Sales Dashboard 2023",
