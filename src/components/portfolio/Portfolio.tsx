@@ -9,6 +9,7 @@ import digiliansDashboard from "@/assets/project-digilians-dashboard.png";
 import digiliansErd from "@/assets/project-digilians-erd.png";
 import digiliansMgmt from "@/assets/project-digilians-mgmt.jpg";
 import bodyPerformance from "@/assets/project-body-performance.jpg";
+import salesTableau from "@/assets/sales-dashboard-tableau.png";
 import gtxMain from "@/assets/gtx-dashboard-main.png";
 import gtxDecomp from "@/assets/gtx-decomposition.png";
 import gtxKey from "@/assets/gtx-key-influencers.png";
