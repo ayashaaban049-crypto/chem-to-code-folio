@@ -63,6 +63,14 @@ const projects: Project[] = [
     tag: "Dashboard",
   },
   {
+    img: salesTableau,
+    title: "Sales Dashboard — Tableau (Sample Superstore)",
+    desc: "End-to-end BI dashboard built in Tableau analyzing 9,994 sales records across the US. Five visualizations: sub-category bar chart, regional stacked bars, monthly trend line, state-level bubble map, and category pie. Key findings: November peaked at $352K, California led at $457K, Technology topped categories at $836K, Phones drove $330K in sub-category revenue.",
+    tools: ["Tableau", "Data Modeling", "Calculated Fields", "Geo Mapping", "Time-Series"],
+    tag: "Dashboard",
+    link: "/sales-dashboard",
+  },
+  {
     img: gtx,
     title: "GTX Sales Dashboard",
     desc: "Interactive sales analysis with sector revenue insights, regional office performance, product-level waterfall analysis and sales-agent comparisons.",
