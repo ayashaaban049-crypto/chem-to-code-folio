@@ -9,6 +9,7 @@ import digiliansDashboard from "@/assets/project-digilians-dashboard.png";
 import digiliansErd from "@/assets/project-digilians-erd.png";
 import digiliansMgmt from "@/assets/project-digilians-mgmt.jpg";
 import bodyPerformance from "@/assets/project-body-performance.jpg";
+import salesTableau from "@/assets/sales-dashboard-tableau.png";
 import gtxMain from "@/assets/gtx-dashboard-main.png";
 import gtxDecomp from "@/assets/gtx-decomposition.png";
 import gtxKey from "@/assets/gtx-key-influencers.png";
@@ -60,6 +61,14 @@ const projects: Project[] = [
     desc: "Interactive sales dashboard built in Power BI analyzing $20.94M in total sales across 9K orders. Features include monthly sales treemap, waterfall chart by product, top 15 sales agents bar chart, donut charts for manager and regional office breakdown, global sales map, decomposition tree for drill-down analysis, and AI-powered key influencers visual identifying GTK 500 as the top sales price driver.",
     tools: ["Power BI", "Data Visualization", "Sales Analytics", "DAX", "Business Intelligence"],
     tag: "Dashboard",
+  },
+  {
+    img: salesTableau,
+    title: "Sales Dashboard — Tableau (Sample Superstore)",
+    desc: "End-to-end BI dashboard built in Tableau analyzing 9,994 sales records across the US. Five visualizations: sub-category bar chart, regional stacked bars, monthly trend line, state-level bubble map, and category pie. Key findings: November peaked at $352K, California led at $457K, Technology topped categories at $836K, Phones drove $330K in sub-category revenue.",
+    tools: ["Tableau", "Data Modeling", "Calculated Fields", "Geo Mapping", "Time-Series"],
+    tag: "Dashboard",
+    link: "/sales-dashboard",
   },
   {
     img: gtx,
