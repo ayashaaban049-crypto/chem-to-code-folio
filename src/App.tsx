@@ -7,6 +7,7 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import SalesDashboard from "./pages/SalesDashboard.tsx";
+import SalesDashboard2026 from "./pages/SalesDashboard2026.tsx";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/sales-dashboard" element={<SalesDashboard />} />
+            <Route path="/sales-dashboard-2026" element={<SalesDashboard2026 />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
