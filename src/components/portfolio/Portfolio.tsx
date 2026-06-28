@@ -10,6 +10,7 @@ import digiliansErd from "@/assets/project-digilians-erd.png";
 import digiliansMgmt from "@/assets/project-digilians-mgmt.jpg";
 import bodyPerformance from "@/assets/project-body-performance.jpg";
 import salesTableau from "@/assets/sales-dashboard-tableau.png";
+import sales2026 from "@/assets/sales-dashboard-2026.png";
 import gtxMain from "@/assets/gtx-dashboard-main.png";
 import gtxDecomp from "@/assets/gtx-decomposition.png";
 import gtxKey from "@/assets/gtx-key-influencers.png";
@@ -69,6 +70,14 @@ const projects: Project[] = [
     tools: ["Tableau", "Data Modeling", "Calculated Fields", "Geo Mapping", "Time-Series"],
     tag: "Dashboard",
     link: "/sales-dashboard",
+  },
+  {
+    img: sales2026,
+    title: "Sales Dashboard Year 2026 — Tableau (Amazing Dataset)",
+    desc: "European sales analytics dashboard visualizing $11.9M in B2B/B2C sales across 14 countries. Four interactive visualizations: packed bubble chart of top 10 customers, segment pie (Consumer/Corporate/Home Office), regional bar chart, and a country-level choropleth map. Key findings: Consumer segment leads at $6.16M, Central region dominates at $6.66M, France tops countries at $3.11M, and Bettie Lang is the top customer at $112,602.",
+    tools: ["Tableau", "Choropleth Mapping", "Bubble Charts", "Multi-table Joins", "Segment Analysis"],
+    tag: "Dashboard",
+    link: "/sales-dashboard-2026",
   },
   {
     img: gtx,
