@@ -189,7 +189,7 @@ export const translations = {
     certifications: {
       eyebrow: "الشهادات", title: "اعتمادات موثّقة.",
       description: "شهادات ودورات احترافية مكتملة في تحليل البيانات والتصور البصري والبرمجة.",
-      featured: "احترافية", verify: "تحقق",
+      featured: "⭐ الأكثر صلة", verify: "تحقق",
     },
     freelancing: {
       eyebrow: "منصات العمل الحر", title: "اعمل معي عبر الإنترنت.",
