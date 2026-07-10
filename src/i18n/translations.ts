@@ -80,7 +80,7 @@ export const translations = {
     certifications: {
       eyebrow: "Certifications", title: "Verified credentials.",
       description: "Professional certificates and courses completed across data analytics, visualization, and programming.",
-      featured: "Professional", verify: "Verify",
+      featured: "⭐ Most Relevant", verify: "Verify",
     },
     freelancing: {
       eyebrow: "Freelancing Platforms", title: "Work with me online.",
