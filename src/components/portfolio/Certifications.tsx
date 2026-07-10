@@ -27,7 +27,7 @@ const certs: Cert[] = [
     title: "Microsoft Certified: Power BI Data Analyst Associate",
     issuer: "Microsoft · PL-300",
     date: "Jul 2026",
-    verify: "https://learn.microsoft.com/en-us/users/credentials/39794F9EDCB7E21A",
+    verify: "https://learn.microsoft.com/api/credentials/share/en-us/Khaleilaya51301903-0899/39794F9EDCB7E21A?sharingId=EBBB0B50DA87953F",
     featured: true,
     desc: "Officially certified by Microsoft, validating skills in data analysis and building interactive dashboards using Power BI.",
     descAr: "معتمدة رسمياً من Microsoft، تثبت مهارات تحليل البيانات وبناء لوحات المعلومات التفاعلية باستخدام Power BI.",
