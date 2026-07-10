@@ -1,11 +1,38 @@
 import { Award, ExternalLink, Star } from "lucide-react";
+import { motion } from "framer-motion";
 import { SectionHeading } from "./SectionHeading";
 import { useLang } from "@/contexts/LanguageContext";
 
-type Cert = { title: string; issuer: string; date: string; verify?: string; featured?: boolean; };
+const MicrosoftLogo = ({ className = "h-9 w-9" }: { className?: string }) => (
+  <svg viewBox="0 0 21 21" className={className} aria-hidden="true">
+    <rect x="1" y="1" width="9" height="9" fill="#f25022" />
+    <rect x="11" y="1" width="9" height="9" fill="#7fba00" />
+    <rect x="1" y="11" width="9" height="9" fill="#00a4ef" />
+    <rect x="11" y="11" width="9" height="9" fill="#ffb900" />
+  </svg>
+);
+
+type Cert = {
+  title: string;
+  issuer: string;
+  date: string;
+  verify?: string;
+  featured?: boolean;
+  desc?: string;
+  descAr?: string;
+};
 
 const certs: Cert[] = [
-  { title: "Google Data Analytics Professional Certificate", issuer: "Google · Coursera (8-course program)", date: "Apr 2026", verify: "https://coursera.org/verify/professional-cert/ADVHN61IQABR", featured: true },
+  {
+    title: "Microsoft Certified: Power BI Data Analyst Associate",
+    issuer: "Microsoft · PL-300",
+    date: "Jul 2026",
+    verify: "https://learn.microsoft.com/en-us/users/credentials/39794F9EDCB7E21A",
+    featured: true,
+    desc: "Officially certified by Microsoft, validating skills in data analysis and building interactive dashboards using Power BI.",
+    descAr: "معتمدة رسمياً من Microsoft، تثبت مهارات تحليل البيانات وبناء لوحات المعلومات التفاعلية باستخدام Power BI.",
+  },
+  { title: "Google Data Analytics Professional Certificate", issuer: "Google · Coursera (8-course program)", date: "Apr 2026", verify: "https://coursera.org/verify/professional-cert/ADVHN61IQABR" },
   { title: "Foundations: Data, Data, Everywhere", issuer: "Google · Coursera", date: "Mar 2026" },
   { title: "Ask Questions to Make Data-Driven Decisions", issuer: "Google · Coursera", date: "Mar 2026", verify: "https://coursera.org/verify/VRM1C6H41G91" },
   { title: "Prepare Data for Exploration", issuer: "Google · Coursera", date: "Mar 2026", verify: "https://coursera.org/verify/DC9VJ1LLIV8K" },
@@ -24,24 +51,82 @@ const certs: Cert[] = [
 ];
 
 export const Certifications = () => {
-  const { t } = useLang();
+  const { t, lang } = useLang();
+  const featured = certs.find((c) => c.featured);
+  const others = certs.filter((c) => !c.featured);
+
   return (
     <section id="certifications" className="section-pad">
       <div className="container-tight">
-        <SectionHeading eyebrow={t.certifications.eyebrow} title={t.certifications.title} description={t.certifications.description} />
+        <SectionHeading
+          eyebrow={t.certifications.eyebrow}
+          title={t.certifications.title}
+          description={t.certifications.description}
+        />
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {certs.map((c) => (
-            <article key={c.title} className={`glass-card group flex h-full flex-col gap-4 p-6 transition-all hover:-translate-y-0.5 ${c.featured ? "border-primary/40 shadow-glow-sm" : ""}`}>
-              <div className="flex items-start justify-between gap-3">
-                <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-2xl ${c.featured ? "bg-gradient-primary text-primary-foreground shadow-glow-sm" : "bg-surface-elevated text-primary"}`}>
-                  {c.featured ? <Star size={20} /> : <Award size={20} />}
-                </span>
-                {c.featured && (<span className="chip border-primary/40 text-primary">{t.certifications.featured}</span>)}
+        {featured && (
+          <motion.article
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="glass-card group relative mb-10 overflow-hidden rounded-2xl border-2 border-ember/40 p-7 shadow-ember md:p-9"
+          >
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-ember/5 via-transparent to-transparent" />
+            <div className="relative flex flex-col gap-6 md:flex-row md:items-start md:gap-8">
+              <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-surface-elevated shadow-ember ring-1 ring-ember/30">
+                <MicrosoftLogo className="h-9 w-9" />
               </div>
               <div className="flex-1">
-                <h3 className="font-display text-base font-semibold leading-snug">{c.title}</h3>
-                <p className="mt-1.5 text-sm text-muted-foreground">{c.issuer}</p>
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="chip border-ember/40 text-ember">
+                    <Star size={12} className="fill-ember text-ember" />
+                    {t.certifications.featured}
+                  </span>
+                  <span className="text-xs font-medium text-muted-foreground">{featured.issuer}</span>
+                </div>
+                <h3 className="mt-3 font-display text-xl font-bold leading-snug md:text-2xl">
+                  {featured.title}
+                </h3>
+                <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
+                  {lang === "ar" && featured.descAr ? featured.descAr : featured.desc}
+                </p>
+                <div className="mt-5 flex flex-wrap items-center gap-5">
+                  <span className="text-xs font-medium text-muted-foreground">{featured.date}</span>
+                  {featured.verify && (
+                    <a
+                      href={featured.verify}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-ember transition-colors hover:text-ember/80"
+                    >
+                      {t.certifications.verify} <ExternalLink size={14} />
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          </motion.article>
+        )}
+
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {others.map((c, i) => (
+            <motion.article
+              key={c.title}
+              initial={{ y: 24, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.5, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
+              className="glass-card group flex h-full flex-col gap-3 p-5 transition-all hover:-translate-y-0.5"
+            >
+              <div className="flex items-start justify-between gap-3">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-surface-elevated text-primary">
+                  <Award size={18} />
+                </span>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-display text-sm font-semibold leading-snug">{c.title}</h3>
+                <p className="mt-1 text-xs text-muted-foreground">{c.issuer}</p>
               </div>
               <div className="flex items-center justify-between border-t border-border/50 pt-3">
                 <span className="text-xs text-muted-foreground">{c.date}</span>
@@ -51,7 +136,7 @@ export const Certifications = () => {
                   </a>
                 )}
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>
