@@ -15,6 +15,7 @@ import gtxMain from "@/assets/gtx-dashboard-main.png";
 import gtxDecomp from "@/assets/gtx-decomposition.png";
 import gtxKey from "@/assets/gtx-key-influencers.png";
 import gtxMap from "@/assets/gtx-map.png";
+import chemSafetyRag from "@/assets/project-chem-safety-rag.jpg";
 
 import { useLang } from "@/contexts/LanguageContext";
 
