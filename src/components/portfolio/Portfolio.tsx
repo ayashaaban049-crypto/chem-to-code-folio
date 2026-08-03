@@ -239,6 +239,30 @@ export const Portfolio = () => {
                   )}
                 </div>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
+                {(p.demo || p.github) && (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {p.demo && (
+                      <a
+                        href={p.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground transition-all hover:shadow-glow-sm hover:-translate-y-0.5"
+                      >
+                        🚀 Live Demo
+                      </a>
+                    )}
+                    {p.github && (
+                      <a
+                        href={p.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 px-4 py-2 text-xs font-semibold text-primary transition-all hover:bg-primary/10 hover:-translate-y-0.5"
+                      >
+                        💻 GitHub
+                      </a>
+                    )}
+                  </div>
+                )}
                 <div className="mt-5 flex flex-wrap gap-2">
                   {p.tools.map((t) => (
                     <span key={t} className="chip">{t}</span>
