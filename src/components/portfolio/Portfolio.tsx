@@ -15,7 +15,7 @@ import gtxMain from "@/assets/gtx-dashboard-main.png";
 import gtxDecomp from "@/assets/gtx-decomposition.png";
 import gtxKey from "@/assets/gtx-key-influencers.png";
 import gtxMap from "@/assets/gtx-map.png";
-import chemSafetyRag from "@/assets/project-chem-safety-rag.jpg";
+import chemSafetyRag from "@/assets/project-chem-safety-ai.jpg";
 
 import { useLang } from "@/contexts/LanguageContext";
 
@@ -29,6 +29,8 @@ type Project = {
   tools: string[];
   tag: string;
   link?: string;
+  demo?: string;
+  github?: string;
 };
 
 const projects: Project[] = [
@@ -58,11 +60,13 @@ const projects: Project[] = [
   },
   {
     img: chemSafetyRag,
-    title: "Chemical Safety MSDS Intelligent Assistant",
-    desc: "An AI-powered RAG assistant that answers chemical safety questions using official MSDS documents. Built with LangChain and FAISS for vector retrieval, Hugging Face embeddings for semantic search, and a clean Streamlit interface for interactive Q&A.",
+    title: "Chemical Safety AI",
+    desc: "AI-powered RAG assistant for answering chemical safety questions using official MSDS documents with semantic search and an interactive Streamlit interface.",
     tools: ["Python", "Streamlit", "LangChain", "FAISS", "Hugging Face", "Sentence Transformers"],
     tag: "AI & RAG",
     link: "https://chemical-safety-msds-intelligent-assistant.streamlit.app/",
+    demo: "https://chemical-safety-msds-intelligent-assistant.streamlit.app/",
+    github: "https://github.com/ayashaaban049-crypto/chem-safety-rag",
   },
   {
     img: gtxMain,
@@ -235,6 +239,30 @@ export const Portfolio = () => {
                   )}
                 </div>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
+                {(p.demo || p.github) && (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {p.demo && (
+                      <a
+                        href={p.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground transition-all hover:shadow-glow-sm hover:-translate-y-0.5"
+                      >
+                        🚀 Live Demo
+                      </a>
+                    )}
+                    {p.github && (
+                      <a
+                        href={p.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 px-4 py-2 text-xs font-semibold text-primary transition-all hover:bg-primary/10 hover:-translate-y-0.5"
+                      >
+                        💻 GitHub
+                      </a>
+                    )}
+                  </div>
+                )}
                 <div className="mt-5 flex flex-wrap gap-2">
                   {p.tools.map((t) => (
                     <span key={t} className="chip">{t}</span>
