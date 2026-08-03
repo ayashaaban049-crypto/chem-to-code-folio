@@ -15,6 +15,7 @@ import gtxMain from "@/assets/gtx-dashboard-main.png";
 import gtxDecomp from "@/assets/gtx-decomposition.png";
 import gtxKey from "@/assets/gtx-key-influencers.png";
 import gtxMap from "@/assets/gtx-map.png";
+import chemSafetyRag from "@/assets/project-chem-safety-rag.jpg";
 
 import { useLang } from "@/contexts/LanguageContext";
 
@@ -54,6 +55,14 @@ const projects: Project[] = [
     tools: ["Python", "Streamlit", "Scikit-learn", "Machine Learning", "EDA"],
     tag: "Machine Learning",
     link: "https://github.com/ayashaaban049-crypto/Body-Performance-Analytics-and-Intelligent-main",
+  },
+  {
+    img: chemSafetyRag,
+    title: "Chemical Safety MSDS Intelligent Assistant",
+    desc: "An AI-powered RAG assistant that answers chemical safety questions using official MSDS documents. Built with LangChain and FAISS for vector retrieval, Hugging Face embeddings for semantic search, and a clean Streamlit interface for interactive Q&A.",
+    tools: ["Python", "Streamlit", "LangChain", "FAISS", "Hugging Face", "Sentence Transformers"],
+    tag: "AI & RAG",
+    link: "https://chemical-safety-msds-intelligent-assistant.streamlit.app/",
   },
   {
     img: gtxMain,
