@@ -29,6 +29,8 @@ type Project = {
   tools: string[];
   tag: string;
   link?: string;
+  demo?: string;
+  github?: string;
 };
 
 const projects: Project[] = [
@@ -58,11 +60,13 @@ const projects: Project[] = [
   },
   {
     img: chemSafetyRag,
-    title: "Chemical Safety MSDS Intelligent Assistant",
-    desc: "An AI-powered RAG assistant that answers chemical safety questions using official MSDS documents. Built with LangChain and FAISS for vector retrieval, Hugging Face embeddings for semantic search, and a clean Streamlit interface for interactive Q&A.",
+    title: "Chemical Safety AI",
+    desc: "AI-powered RAG assistant for answering chemical safety questions using official MSDS documents with semantic search and an interactive Streamlit interface.",
     tools: ["Python", "Streamlit", "LangChain", "FAISS", "Hugging Face", "Sentence Transformers"],
     tag: "AI & RAG",
     link: "https://chemical-safety-msds-intelligent-assistant.streamlit.app/",
+    demo: "https://chemical-safety-msds-intelligent-assistant.streamlit.app/",
+    github: "https://github.com/ayashaaban049-crypto/chem-safety-rag",
   },
   {
     img: gtxMain,
