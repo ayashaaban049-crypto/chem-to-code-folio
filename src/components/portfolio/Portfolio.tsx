@@ -57,6 +57,14 @@ const projects: Project[] = [
     link: "https://github.com/ayashaaban049-crypto/Body-Performance-Analytics-and-Intelligent-main",
   },
   {
+    img: chemSafetyRag,
+    title: "Chemical Safety MSDS Intelligent Assistant",
+    desc: "An AI-powered RAG assistant that answers chemical safety questions using official MSDS documents. Built with LangChain and FAISS for vector retrieval, Hugging Face embeddings for semantic search, and a clean Streamlit interface for interactive Q&A.",
+    tools: ["Python", "Streamlit", "LangChain", "FAISS", "Hugging Face", "Sentence Transformers"],
+    tag: "AI & RAG",
+    link: "https://chemical-safety-msds-intelligent-assistant.streamlit.app/",
+  },
+  {
     img: gtxMain,
     images: [gtxMain, gtxDecomp, gtxKey, gtxMap],
     title: "GTX Sales Dashboard — Power BI",
