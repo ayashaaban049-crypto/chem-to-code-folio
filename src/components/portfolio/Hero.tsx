@@ -6,6 +6,7 @@ import { Typewriter } from "./Typewriter";
 import { useCountUp } from "@/hooks/useCountUp";
 import heroCubes from "@/assets/hero-cubes.jpg";
 import profile from "@/assets/aya-profile.png";
+import cvAsset from "@/assets/Aya_Shaaban_CV.pdf.asset.json";
 import { useLang } from "@/contexts/LanguageContext";
 
 const CountStat = ({ n, suffix, text, label, delay }: { n?: number | null; suffix?: string; text?: string; label: string; delay: number; }) => {
@@ -95,7 +96,7 @@ export const Hero = () => {
             </Button>
           </MagneticButton>
           <Button asChild variant="glass" size="lg" className="group text-foreground border-draw">
-            <a href="/Aya_Shaaban_CV.pdf" download="Aya_Shaaban_CV.pdf">
+            <a href={cvAsset.url} download="Aya_Shaaban_CV.pdf">
               <Download size={16} className="animate-bounce transition-transform group-hover:translate-y-0.5" /> {t.hero.cta3}
             </a>
           </Button>
