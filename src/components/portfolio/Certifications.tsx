@@ -45,6 +45,7 @@ const certs: Cert[] = [
   { title: "AI Workflow: Business Priorities and Data Ingestion", issuer: "IBM · Coursera", date: "May 2026", verify: "https://coursera.org/verify/8NQVAHE4IM08" },
   { title: "AI Workflow: Feature Engineering and Bias Detection", issuer: "IBM · Coursera", date: "May 2026", verify: "https://coursera.org/verify/LZIY0MB1EGAD" },
   { title: "AI Workflow: Machine Learning, Visual Recognition and NLP", issuer: "IBM · Coursera", date: "May 2026", verify: "https://coursera.org/verify/TWALV6UC93W1" },
+  { title: "Deep Learning with Keras and TensorFlow", issuer: "IBM · Coursera", date: "Aug 2026", verify: "https://coursera.org/verify/DMD8KDWV4WYN" },
   { title: "Python Programming Basics", issuer: "ITI · Mahara-Tech (AI Academy)", date: "Apr 2026", verify: "https://maharatech.gov.eg/mod/customcert/verify_certificate.php?code=CVqprmG9k2" },
   { title: "Introduction to Deep Learning", issuer: "ITI · Mahara-Tech (AI Academy)", date: "May 2026", verify: "https://maharatech.gov.eg/mod/customcert/verify_certificate.php?code=FWbOW8OnS5" },
   { title: "Fundamentals of Digital Transformation", issuer: "TCEU · Zagazig University (5 Mandatory + 2 Electives: Networks, Mobile App)", date: "Sep 2022" },
