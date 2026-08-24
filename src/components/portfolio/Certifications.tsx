@@ -21,6 +21,7 @@ type Cert = {
   featured?: boolean;
   desc?: string;
   descAr?: string;
+  certImage?: string;
 };
 
 const certs: Cert[] = [
