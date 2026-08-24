@@ -2,6 +2,7 @@ import { Award, ExternalLink, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { SectionHeading } from "./SectionHeading";
 import { useLang } from "@/contexts/LanguageContext";
+import khamsatCert from "@/assets/khamsat-certificate.png.asset.json";
 
 const MicrosoftLogo = ({ className = "h-9 w-9" }: { className?: string }) => (
   <svg viewBox="0 0 21 21" className={className} aria-hidden="true">
@@ -20,6 +21,7 @@ type Cert = {
   featured?: boolean;
   desc?: string;
   descAr?: string;
+  certImage?: string;
 };
 
 const certs: Cert[] = [
@@ -49,6 +51,7 @@ const certs: Cert[] = [
   { title: "Python Programming Basics", issuer: "ITI · Mahara-Tech (AI Academy)", date: "Apr 2026", verify: "https://maharatech.gov.eg/mod/customcert/verify_certificate.php?code=CVqprmG9k2" },
   { title: "Introduction to Deep Learning", issuer: "ITI · Mahara-Tech (AI Academy)", date: "May 2026", verify: "https://maharatech.gov.eg/mod/customcert/verify_certificate.php?code=FWbOW8OnS5" },
   { title: "Fundamentals of Digital Transformation", issuer: "TCEU · Zagazig University (5 Mandatory + 2 Electives: Networks, Mobile App)", date: "Sep 2022" },
+  { title: "Basics of Working on Khamsat", issuer: "Khebra · Khamsat", date: "Aug 2026", certImage: khamsatCert.url },
 ];
 
 export const Certifications = () => {
@@ -120,7 +123,17 @@ export const Certifications = () => {
               transition={{ duration: 0.5, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
               className="glass-card group flex h-full flex-col gap-3 p-5 transition-all hover:-translate-y-0.5"
             >
-              <div className="flex items-start justify-between gap-3">
+            {c.certImage && (
+              <div className="-mx-5 -mt-5 mb-3 overflow-hidden rounded-t-2xl border-b border-border/50">
+                <img
+                  src={c.certImage}
+                  alt={c.title}
+                  className="h-40 w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+            )}
+            <div className="flex items-start justify-between gap-3">
                 <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-surface-elevated text-primary">
                   <Award size={18} />
                 </span>
