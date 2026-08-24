@@ -123,7 +123,17 @@ export const Certifications = () => {
               transition={{ duration: 0.5, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
               className="glass-card group flex h-full flex-col gap-3 p-5 transition-all hover:-translate-y-0.5"
             >
-              <div className="flex items-start justify-between gap-3">
+            {c.certImage && (
+              <div className="-mx-5 -mt-5 mb-3 overflow-hidden rounded-t-2xl border-b border-border/50">
+                <img
+                  src={c.certImage}
+                  alt={c.title}
+                  className="h-40 w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+            )}
+            <div className="flex items-start justify-between gap-3">
                 <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-surface-elevated text-primary">
                   <Award size={18} />
                 </span>
