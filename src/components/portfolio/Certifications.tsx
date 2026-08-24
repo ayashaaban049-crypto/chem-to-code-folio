@@ -2,6 +2,7 @@ import { Award, ExternalLink, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { SectionHeading } from "./SectionHeading";
 import { useLang } from "@/contexts/LanguageContext";
+import khamsatCert from "@/assets/khamsat-certificate.png.asset.json";
 
 const MicrosoftLogo = ({ className = "h-9 w-9" }: { className?: string }) => (
   <svg viewBox="0 0 21 21" className={className} aria-hidden="true">
