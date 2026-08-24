@@ -51,6 +51,7 @@ const certs: Cert[] = [
   { title: "Python Programming Basics", issuer: "ITI · Mahara-Tech (AI Academy)", date: "Apr 2026", verify: "https://maharatech.gov.eg/mod/customcert/verify_certificate.php?code=CVqprmG9k2" },
   { title: "Introduction to Deep Learning", issuer: "ITI · Mahara-Tech (AI Academy)", date: "May 2026", verify: "https://maharatech.gov.eg/mod/customcert/verify_certificate.php?code=FWbOW8OnS5" },
   { title: "Fundamentals of Digital Transformation", issuer: "TCEU · Zagazig University (5 Mandatory + 2 Electives: Networks, Mobile App)", date: "Sep 2022" },
+  { title: "Basics of Working on Khamsat", issuer: "Khebra · Khamsat", date: "Aug 2026", certImage: khamsatCert.url },
 ];
 
 export const Certifications = () => {
