@@ -327,7 +327,7 @@ const CertCard = ({ c, i, verifyLabel, featuredLabel }: { c: Cert; i: number; ve
         Skills Gained
       </p>
       <div className="space-y-2.5">
-        {skillsFor(c.issuer).map((s) => (
+        {c.skills.map((s) => (
           <div key={s.name}>
             <div className="flex items-center justify-between gap-2 text-[11px]">
               <span className="text-foreground/90">{s.name}</span>
