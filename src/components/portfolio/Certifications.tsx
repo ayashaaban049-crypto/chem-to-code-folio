@@ -285,24 +285,23 @@ const CertCard = ({ c, i, verifyLabel, featuredLabel }: { c: Cert; i: number; ve
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${c.title} — ${verifyLabel}`}
-      className="block overflow-hidden rounded-xl border border-border/60 shadow-lg"
+      className="block overflow-hidden rounded-xl border border-border/60 bg-white shadow-lg"
     >
       {c.certImage ? (
         <img
           src={c.certImage}
           alt={c.title}
           loading="lazy"
-          className="h-40 w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          className="aspect-[4/3] w-full bg-white object-contain p-1.5 transition-transform duration-500 group-hover:scale-[1.03]"
         />
       ) : (
         <div
-          className="relative grid h-40 w-full place-items-center transition-transform duration-500 group-hover:scale-105"
+          className="relative grid aspect-[4/3] w-full place-items-center transition-transform duration-500 group-hover:scale-[1.03]"
           style={{ background: "var(--gradient-card)" }}
         >
-          <div className="absolute inset-0" style={{ background: "var(--gradient-glow)" }} />
           <div className="relative flex flex-col items-center gap-2 px-4 text-center">
-            <span className="grid h-11 w-11 place-items-center rounded-xl bg-surface-elevated text-primary ring-1 ring-primary/25">
-              <Award size={20} />
+            <span className="grid h-12 w-12 place-items-center rounded-xl bg-surface-elevated text-primary ring-1 ring-primary/25">
+              <Award size={22} />
             </span>
             <span className="text-[11px] font-medium uppercase tracking-widest text-muted-foreground">
               {c.issuer.split(" · ")[0]}
@@ -311,6 +310,7 @@ const CertCard = ({ c, i, verifyLabel, featuredLabel }: { c: Cert; i: number; ve
         </div>
       )}
     </a>
+
 
     {c.featured && (
       <span className="chip mt-4 self-start border-ember/40 text-ember">
@@ -361,8 +361,62 @@ const CertCard = ({ c, i, verifyLabel, featuredLabel }: { c: Cert; i: number; ve
   </motion.article>
 );
 
+const FeaturedCert = ({ c, verifyLabel, featuredLabel }: { c: Cert; verifyLabel: string; featuredLabel: string }) => (
+  <motion.article
+    initial={{ y: 28, opacity: 0 }}
+    whileInView={{ y: 0, opacity: 1 }}
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+    className="glass-card relative mb-8 overflow-hidden border-ember/50 p-6 shadow-ember sm:p-8"
+  >
+    <div className="pointer-events-none absolute inset-0 opacity-60" style={{ background: "var(--gradient-glow)" }} />
+
+    <div className="relative flex flex-col gap-6 md:flex-row md:items-center">
+      <span className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-surface-elevated text-ember ring-1 ring-ember/35">
+        <Award size={30} />
+      </span>
+
+      <div className="flex-1">
+        <div className="flex flex-wrap items-center gap-3">
+          <span className="chip border-ember/40 text-ember">
+            <Star size={12} className="fill-ember text-ember" />
+            {featuredLabel}
+            <Star size={12} className="fill-ember text-ember" />
+          </span>
+          <span className="chip bg-surface-elevated/90 text-[11px]">{c.date}</span>
+        </div>
+
+        <h3 className="mt-3 font-display text-xl font-bold leading-tight text-primary sm:text-2xl">{c.title}</h3>
+        <p className="mt-1 text-sm text-muted-foreground">{c.issuer}</p>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-foreground/85">
+          Microsoft's official credential for Power BI data analysts — covering data preparation and modeling with
+          Power Query and DAX, building interactive reports and dashboards, and deploying and securing analytics
+          assets for business decision-making.
+        </p>
+
+        <div className="mt-5 flex flex-wrap gap-2">
+          {c.skills.map((s) => (
+            <span key={s.name} className="chip text-[11px]">{s.name}</span>
+          ))}
+        </div>
+
+        <a
+          href={c.verify}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-ember transition-colors hover:text-ember/80"
+        >
+          {verifyLabel} <ExternalLink size={14} />
+        </a>
+      </div>
+    </div>
+  </motion.article>
+);
+
 export const Certifications = () => {
   const { t } = useLang();
+  const featured = certs.find((c) => c.featured);
+  const rest = certs.filter((c) => !c.featured);
 
   return (
     <section id="certifications" className="section-pad">
@@ -373,8 +427,16 @@ export const Certifications = () => {
           description={t.certifications.description}
         />
 
+        {featured && (
+          <FeaturedCert
+            c={featured}
+            verifyLabel={`${t.certifications.verify} →`}
+            featuredLabel={t.certifications.featured}
+          />
+        )}
+
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {certs.map((c, i) => (
+          {rest.map((c, i) => (
             <CertCard
               key={c.title}
               c={c}
@@ -386,5 +448,6 @@ export const Certifications = () => {
         </div>
       </div>
     </section>
+
   );
 };
