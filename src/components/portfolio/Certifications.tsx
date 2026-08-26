@@ -285,24 +285,23 @@ const CertCard = ({ c, i, verifyLabel, featuredLabel }: { c: Cert; i: number; ve
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${c.title} — ${verifyLabel}`}
-      className="block overflow-hidden rounded-xl border border-border/60 shadow-lg"
+      className="block overflow-hidden rounded-xl border border-border/60 bg-white shadow-lg"
     >
       {c.certImage ? (
         <img
           src={c.certImage}
           alt={c.title}
           loading="lazy"
-          className="h-40 w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          className="aspect-[4/3] w-full bg-white object-contain p-1.5 transition-transform duration-500 group-hover:scale-[1.03]"
         />
       ) : (
         <div
-          className="relative grid h-40 w-full place-items-center transition-transform duration-500 group-hover:scale-105"
+          className="relative grid aspect-[4/3] w-full place-items-center transition-transform duration-500 group-hover:scale-[1.03]"
           style={{ background: "var(--gradient-card)" }}
         >
-          <div className="absolute inset-0" style={{ background: "var(--gradient-glow)" }} />
           <div className="relative flex flex-col items-center gap-2 px-4 text-center">
-            <span className="grid h-11 w-11 place-items-center rounded-xl bg-surface-elevated text-primary ring-1 ring-primary/25">
-              <Award size={20} />
+            <span className="grid h-12 w-12 place-items-center rounded-xl bg-surface-elevated text-primary ring-1 ring-primary/25">
+              <Award size={22} />
             </span>
             <span className="text-[11px] font-medium uppercase tracking-widest text-muted-foreground">
               {c.issuer.split(" · ")[0]}
@@ -311,6 +310,7 @@ const CertCard = ({ c, i, verifyLabel, featuredLabel }: { c: Cert; i: number; ve
         </div>
       )}
     </a>
+
 
     {c.featured && (
       <span className="chip mt-4 self-start border-ember/40 text-ember">
