@@ -2,23 +2,23 @@ import { Award, ExternalLink, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { SectionHeading } from "./SectionHeading";
 import { useLang } from "@/contexts/LanguageContext";
-import khamsatCert from "@/assets/khamsat-certificate.png.asset.json";
-import imgGoogleProgram from "@/assets/cert-google-program.png.asset.json";
-import imgAskQuestions from "@/assets/cert-ask-questions.png.asset.json";
-import imgPrepareData from "@/assets/cert-prepare-data.png.asset.json";
-import imgProcessData from "@/assets/cert-process-data.png.asset.json";
-import imgAnalyzeData from "@/assets/cert-analyze-data.png.asset.json";
-import imgShareData from "@/assets/cert-share-data.png.asset.json";
-import imgRProgramming from "@/assets/cert-r-programming.png.asset.json";
-import imgCapstone from "@/assets/cert-capstone.png.asset.json";
-import imgAccelerateAI from "@/assets/cert-accelerate-ai.png.asset.json";
-import imgIbm1 from "@/assets/cert-ibm-workflow-1.png.asset.json";
-import imgIbm2 from "@/assets/cert-ibm-workflow-2.png.asset.json";
-import imgIbm3 from "@/assets/cert-ibm-workflow-3.png.asset.json";
-import imgKeras from "@/assets/cert-keras-tensorflow.png.asset.json";
-import imgPythonBasics from "@/assets/cert-python-basics.png.asset.json";
-import imgIntroDL from "@/assets/cert-intro-deep-learning.png.asset.json";
-import imgDigitalTransformation from "@/assets/cert-digital-transformation.png.asset.json";
+import khamsatCert from "@/assets/certs/khamsat.png";
+import imgGoogleProgram from "@/assets/certs/google-program.png";
+import imgAskQuestions from "@/assets/certs/ask-questions.png";
+import imgPrepareData from "@/assets/certs/prepare-data.png";
+import imgProcessData from "@/assets/certs/process-data.png";
+import imgAnalyzeData from "@/assets/certs/analyze-data.png";
+import imgShareData from "@/assets/certs/share-data.png";
+import imgRProgramming from "@/assets/certs/r-programming.png";
+import imgCapstone from "@/assets/certs/capstone.png";
+import imgAccelerateAI from "@/assets/certs/accelerate-ai.png";
+import imgIbm1 from "@/assets/certs/ibm-workflow-1.png";
+import imgIbm2 from "@/assets/certs/ibm-workflow-2.png";
+import imgIbm3 from "@/assets/certs/ibm-workflow-3.png";
+import imgKeras from "@/assets/certs/keras-tensorflow.png";
+import imgPythonBasics from "@/assets/certs/python-basics.png";
+import imgIntroDL from "@/assets/certs/intro-deep-learning.png";
+import imgDigitalTransformation from "@/assets/certs/digital-transformation.png";
 
 type Skill = { name: string; value: number };
 
@@ -53,7 +53,7 @@ const certs: Cert[] = [
     issuer: "Google · Coursera (8-course program)",
     date: "Apr 2026",
     verify: GOOGLE_PROGRAM,
-    certImage: imgGoogleProgram.url,
+    certImage: imgGoogleProgram,
     skills: [
       { name: "End-to-End Analysis", value: 93 },
       { name: "SQL & Spreadsheets", value: 89 },
@@ -65,6 +65,7 @@ const certs: Cert[] = [
     issuer: "Google · Coursera",
     date: "Mar 2026",
     verify: GOOGLE_PROGRAM,
+    certImage: imgGoogleProgram,
     skills: [
       { name: "Analytical Thinking", value: 88 },
       { name: "Data Life Cycle", value: 90 },
@@ -76,7 +77,7 @@ const certs: Cert[] = [
     issuer: "Google · Coursera",
     date: "Mar 2026",
     verify: "https://coursera.org/verify/VRM1C6H41G91",
-    certImage: imgAskQuestions.url,
+    certImage: imgAskQuestions,
     skills: [
       { name: "Problem Framing", value: 90 },
       { name: "Stakeholder Questions", value: 87 },
@@ -88,7 +89,7 @@ const certs: Cert[] = [
     issuer: "Google · Coursera",
     date: "Mar 2026",
     verify: "https://coursera.org/verify/DC9VJ1LLIV8K",
-    certImage: imgPrepareData.url,
+    certImage: imgPrepareData,
     skills: [
       { name: "Data Collection & Bias", value: 88 },
       { name: "SQL Queries", value: 86 },
@@ -100,7 +101,7 @@ const certs: Cert[] = [
     issuer: "Google · Coursera",
     date: "Apr 2026",
     verify: "https://coursera.org/verify/LK1T531PH0QO",
-    certImage: imgProcessData.url,
+    certImage: imgProcessData,
     skills: [
       { name: "Data Cleaning", value: 93 },
       { name: "SQL Transformations", value: 88 },
@@ -112,7 +113,7 @@ const certs: Cert[] = [
     issuer: "Google · Coursera",
     date: "Apr 2026",
     verify: "https://coursera.org/verify/AWR96KD3SCAD",
-    certImage: imgAnalyzeData.url,
+    certImage: imgAnalyzeData,
     skills: [
       { name: "Aggregation & Joins", value: 89 },
       { name: "Pivot Tables", value: 90 },
@@ -124,7 +125,7 @@ const certs: Cert[] = [
     issuer: "Google · Coursera",
     date: "Apr 2026",
     verify: "https://coursera.org/verify/MGQ5JDY3KT5T",
-    certImage: imgShareData.url,
+    certImage: imgShareData,
     skills: [
       { name: "Tableau Dashboards", value: 90 },
       { name: "Data Storytelling", value: 92 },
@@ -136,7 +137,7 @@ const certs: Cert[] = [
     issuer: "Google · Coursera",
     date: "Apr 2026",
     verify: "https://coursera.org/verify/T2CJ1NH04SSK",
-    certImage: imgRProgramming.url,
+    certImage: imgRProgramming,
     skills: [
       { name: "R & RStudio", value: 85 },
       { name: "tidyverse / ggplot2", value: 83 },
@@ -148,7 +149,7 @@ const certs: Cert[] = [
     issuer: "Google · Coursera",
     date: "Apr 2026",
     verify: "https://coursera.org/verify/WGVBDT1JWR2L",
-    certImage: imgCapstone.url,
+    certImage: imgCapstone,
     skills: [
       { name: "Case Study Analysis", value: 91 },
       { name: "Insight Reporting", value: 89 },
@@ -160,7 +161,7 @@ const certs: Cert[] = [
     issuer: "Google · Coursera",
     date: "Apr 2026",
     verify: "https://coursera.org/verify/FZZLQO754Y6G",
-    certImage: imgAccelerateAI.url,
+    certImage: imgAccelerateAI,
     skills: [
       { name: "Prompt Engineering", value: 88 },
       { name: "AI Productivity Tools", value: 86 },
@@ -172,7 +173,7 @@ const certs: Cert[] = [
     issuer: "IBM · Coursera",
     date: "May 2026",
     verify: "https://coursera.org/verify/8NQVAHE4IM08",
-    certImage: imgIbm1.url,
+    certImage: imgIbm1,
     skills: [
       { name: "AI Business Strategy", value: 87 },
       { name: "Data Ingestion Pipelines", value: 85 },
@@ -184,7 +185,7 @@ const certs: Cert[] = [
     issuer: "IBM · Coursera",
     date: "May 2026",
     verify: "https://coursera.org/verify/LZIY0MB1EGAD",
-    certImage: imgIbm2.url,
+    certImage: imgIbm2,
     skills: [
       { name: "Feature Engineering", value: 89 },
       { name: "Bias Detection", value: 86 },
@@ -196,7 +197,7 @@ const certs: Cert[] = [
     issuer: "IBM · Coursera",
     date: "May 2026",
     verify: "https://coursera.org/verify/TWALV6UC93W1",
-    certImage: imgIbm3.url,
+    certImage: imgIbm3,
     skills: [
       { name: "Supervised Learning", value: 88 },
       { name: "Computer Vision", value: 82 },
@@ -208,7 +209,7 @@ const certs: Cert[] = [
     issuer: "IBM · Coursera",
     date: "Aug 2026",
     verify: "https://coursera.org/verify/DMD8KDWV4WYN",
-    certImage: imgKeras.url,
+    certImage: imgKeras,
     skills: [
       { name: "Keras & TensorFlow", value: 87 },
       { name: "CNN & RNN Models", value: 84 },
@@ -220,7 +221,7 @@ const certs: Cert[] = [
     issuer: "ITI · Mahara-Tech (AI Academy)",
     date: "Apr 2026",
     verify: "https://maharatech.gov.eg/mod/customcert/verify_certificate.php?code=CVqprmG9k2",
-    certImage: imgPythonBasics.url,
+    certImage: imgPythonBasics,
     skills: [
       { name: "Python Syntax", value: 91 },
       { name: "Functions & OOP", value: 85 },
@@ -232,7 +233,7 @@ const certs: Cert[] = [
     issuer: "ITI · Mahara-Tech (AI Academy)",
     date: "May 2026",
     verify: "https://maharatech.gov.eg/mod/customcert/verify_certificate.php?code=FWbOW8OnS5",
-    certImage: imgIntroDL.url,
+    certImage: imgIntroDL,
     skills: [
       { name: "Neural Networks", value: 86 },
       { name: "Backpropagation", value: 81 },
@@ -244,7 +245,7 @@ const certs: Cert[] = [
     issuer: "TCEU · Zagazig University (5 Mandatory + 2 Electives: Networks, Mobile App)",
     date: "Sep 2022",
     verify: "https://tceu.zu.edu.eg/",
-    certImage: imgDigitalTransformation.url,
+    certImage: imgDigitalTransformation,
     skills: [
       { name: "Digital Transformation", value: 88 },
       { name: "Computer Networks", value: 84 },
@@ -255,8 +256,8 @@ const certs: Cert[] = [
     title: "Basics of Working on Khamsat",
     issuer: "Khebra · Khamsat",
     date: "Aug 2026",
-    verify: khamsatCert.url,
-    certImage: khamsatCert.url,
+    verify: khamsatCert,
+    certImage: khamsatCert,
     skills: [
       { name: "Freelance Workflow", value: 90 },
       { name: "Client Communication", value: 86 },
