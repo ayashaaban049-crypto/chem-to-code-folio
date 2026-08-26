@@ -63,11 +63,34 @@ const certs: Cert[] = [
     ],
   },
   {
+    title: "Harnessing the Power of Data with Power BI",
+    issuer: "Microsoft · Coursera",
+    date: "Jun 2026",
+    verify: "https://coursera.org/verify/NN62P0ILSWF0",
+    certImage: imgPowerBiHarnessing,
+    skills: [
+      { name: "Power BI Dashboards", value: 93 },
+      { name: "Data Modeling", value: 88 },
+      { name: "DAX Basics", value: 85 },
+    ],
+  },
+  {
+    title: "Preparing Data for Analysis with Microsoft Excel",
+    issuer: "Microsoft · Coursera",
+    date: "Jun 2026",
+    verify: "https://coursera.org/verify/R3T06I3PIV3K",
+    certImage: imgExcelPrepare,
+    skills: [
+      { name: "Excel Data Cleaning", value: 92 },
+      { name: "Pivot Tables", value: 89 },
+      { name: "Data Preparation", value: 86 },
+    ],
+  },
+  {
     title: "Foundations: Data, Data, Everywhere",
     issuer: "Google · Coursera",
     date: "Mar 2026",
-    verify: GOOGLE_PROGRAM,
-    certImage: imgGoogleProgram,
+    verify: "https://coursera.org/verify/POPB40MQHFHX",
     skills: [
       { name: "Analytical Thinking", value: 88 },
       { name: "Data Life Cycle", value: 90 },
