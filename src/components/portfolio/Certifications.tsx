@@ -19,6 +19,8 @@ import imgKeras from "@/assets/certs/keras-tensorflow.png";
 import imgPythonBasics from "@/assets/certs/python-basics.png";
 import imgIntroDL from "@/assets/certs/intro-deep-learning.png";
 import imgDigitalTransformation from "@/assets/certs/digital-transformation.png";
+import imgPowerBiHarnessing from "@/assets/certs/powerbi-harnessing.png";
+import imgExcelPrepare from "@/assets/certs/excel-prepare.png";
 
 type Skill = { name: string; value: number };
 
