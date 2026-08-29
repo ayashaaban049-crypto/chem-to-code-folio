@@ -17,6 +17,7 @@ import gtxKey from "@/assets/gtx-key-influencers.png";
 import gtxMap from "@/assets/gtx-map.png";
 import chemSafetyRag from "@/assets/project-chem-safety-ai.jpg";
 import egyTeraVolt from "@/assets/project-egytera-volt.png";
+import egyTeraLogin from "@/assets/project-egytera-login.png.asset.json";
 
 import { useLang } from "@/contexts/LanguageContext";
 
