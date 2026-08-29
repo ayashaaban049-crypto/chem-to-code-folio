@@ -21,6 +21,7 @@ import imgIntroDL from "@/assets/certs/intro-deep-learning.png";
 import imgDigitalTransformation from "@/assets/certs/digital-transformation.png";
 import imgPowerBiHarnessing from "@/assets/certs/powerbi-harnessing.png";
 import imgExcelPrepare from "@/assets/certs/excel-prepare.png";
+import imgFoundations from "@/assets/certs/foundations.png";
 
 type Skill = { name: string; value: number };
 
@@ -91,6 +92,7 @@ const certs: Cert[] = [
     issuer: "Google · Coursera",
     date: "Mar 2026",
     verify: "https://coursera.org/verify/POPB40MQHFHX",
+    certImage: imgFoundations,
     skills: [
       { name: "Analytical Thinking", value: 88 },
       { name: "Data Life Cycle", value: 90 },
