@@ -16,8 +16,9 @@ import gtxDecomp from "@/assets/gtx-decomposition.png";
 import gtxKey from "@/assets/gtx-key-influencers.png";
 import gtxMap from "@/assets/gtx-map.png";
 import chemSafetyRag from "@/assets/project-chem-safety-ai.jpg";
-import egyTeraVolt from "@/assets/project-egytera-volt.png";
-import egyTeraLogin from "@/assets/project-egytera-login.png.asset.json";
+import egyTeraVolt from "@/assets/egytera-forecast.png";
+import egyTeraPrediction from "@/assets/egytera-prediction.png";
+import egyTeraLogin from "@/assets/egytera-login.png";
 
 import { useLang } from "@/contexts/LanguageContext";
 
@@ -38,7 +39,7 @@ type Project = {
 const projects: Project[] = [
   {
     img: egyTeraVolt,
-    images: [egyTeraVolt, egyTeraLogin.url],
+    images: [egyTeraVolt, egyTeraPrediction, egyTeraLogin],
     title: "EgyTera Volt AI — Electricity Demand Forecasting System",
     desc: "AI-powered electricity demand forecasting and intelligent decision-support system. Built with XGBoost for 7-day recursive load forecasting, FastAPI REST backend, Gemini AI for executive analysis, automated recommendation engine for peak/low demand management, and an interactive frontend dashboard. Developed as a team project.",
     tools: ["Python", "XGBoost", "FastAPI", "Machine Learning", "Gemini AI", "Time Series", "Data Analytics"],
